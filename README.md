@@ -25,19 +25,19 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
  Deuxièmement, il faut savoir que nous avons eu quelques explications sur les 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*, *Graphes* **A verifier suivant le diapo de la prof**)
  Partant de ce principe, il faut savoir quel type de données nous avons à traiter. Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Notre document est structuré de la manière suivante : 
   
->   *{
->    "VILLE": "ANGERS",
->    "CODE_INSEE": 49007,
->    "LONGITUDE": -0.556177,
->    "LATITUDE": 47.472707,
->    "DATE": "01/01/2005",
->    "INDICE_QUALITE_AIR": 3,
->    "SOUS_INDICE_OZONE": 3,
->    "SOUS_INDICE_PARTICULES_FINES": 1,
->    "SOUS_INDICE_DIOXYDE_D'AZOTE": 1,
->    "SOUS_INDICE_DIOXYDE_DE_SOUFRE": 1,
->    "CODE_COULEUR": "VERT"
->    }*
+>   *{  <br/>
+>    "VILLE": "ANGERS",  <br/>
+>    "CODE_INSEE": 49007,  <br/>
+>    "LONGITUDE": -0.556177,  <br/>
+>    "LATITUDE": 47.472707, <br/>
+>    "DATE": "01/01/2005", <br/>
+>    "INDICE_QUALITE_AIR": 3, <br/>
+>    "SOUS_INDICE_OZONE": 3, <br/>
+>    "SOUS_INDICE_PARTICULES_FINES": 1, <br/>
+>    "SOUS_INDICE_DIOXYDE_D'AZOTE": 1, <br/>
+>    "SOUS_INDICE_DIOXYDE_DE_SOUFRE": 1, <br/>
+>    "CODE_COULEUR": "VERT" <br/>
+>    }* <br/>
   
  Pour chaque ville nous avons certaines informations quand à sa position et surtout, les informations quand à la pollution.
  Ainsi le choix d'une base de données NoSQL orientée document semble légitime.
