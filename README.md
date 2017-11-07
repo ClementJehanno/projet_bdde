@@ -1,5 +1,5 @@
 # Projet base de données 
-Projet M1 base de données évoluées
+Ceci est le github associé à notre projet de base de données 
 
 # Plan
 
