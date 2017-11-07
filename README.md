@@ -20,7 +20,7 @@ Nos données sont réparties par région, code postal, qualité de l'air ainsi q
 1. Outils
 
 Le choix de notre base de donnée s'est orientée vers une base NoSQL.
- * Pourquoi le NoSQL ?
+ * Pourquoi le NoSQL ? <br/>
 Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir déjà fait du Oracle l'année passée et avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir pourquoi.
  Deuxièmement, il faut savoir que nous avons eu quelques explications sur les 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*, *Graphes* **A verifier suivant le diapo de la prof**)
  Partant de ce principe, il faut savoir quel type de données nous avons à traiter. Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Notre document est structuré de la manière suivante : 
