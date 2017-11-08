@@ -1,0 +1,4 @@
+Talend ok
+formater nos données proprement + aggréger proprement + queries intéressantes
+rapport = readme.md => Analyse en visuels graphiques
+diapo présentation => Analyse en visuels graphiques 
