@@ -47,9 +47,9 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
    * MongoDB <br/>
    Nous nous sommes donc orientés vers une base de donnée mongoDB pour les raisons plus haut.
    Quelques notions d'utilisation de mongoDB :
-   Installation par le biais de la documentation officielle : https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/
+   Installation par le biais de la documentation officielle : <a href="https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/" > https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/ </a>
    Pour l'import nous avons utilisé la commande suivante : 
-   >mongoimport --jsonArray --db projetBDE --collection qualite_air --file /CHEMIN/qualite_air_bon_format.json
+   >mongoimport --jsonArray --db projetBDE --collection qualite_air --file /CHEMIN/qualite_air_bon_format.json <br/>
    Les requêtes sont dans le fichier queries.txt présent dans le dépôt.
    
    * Le format JSON <br/>
