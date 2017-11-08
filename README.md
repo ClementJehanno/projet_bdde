@@ -13,7 +13,9 @@ Ceci est le github associé à notre projet de base de données
 
 Nous avons choisi d'étudier la qualité de l'air dans la région des Pays de la Loire.
 L'idée à court terme était de pouvoir obtenir quelques informations concernant le niveau moyen de qualité de l'air, voir quelles villes sont plus ou moins bien placées etc.
-Nos données sont réparties par région, code postal, qualité de l'air ainsi que d'autres facteurs de qualité (**A compléter**)
+Nos données sont réparties par région, code postal, qualité de l'air ainsi que d'autres facteurs de qualité, etc.
+A terme l'idée est de faire nos aggrégats avec différentes données en les passants dans Talend et ainsi en augmentant la taille de nos données en recoupants plusieurs données différentes.
+Il faudra donc refaire nos aggrégats proprement.
 
 # Instructions 
 
@@ -22,7 +24,7 @@ Nos données sont réparties par région, code postal, qualité de l'air ainsi q
 Le choix de notre base de donnée s'est orientée vers une base NoSQL.
  * Pourquoi le NoSQL ? <br/>
 Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir déjà fait du Oracle l'année passée et avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir pourquoi.
- Deuxièmement, il faut savoir que nous avons eu quelques explications sur les 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*, *Graphes* **A verifier suivant le diapo de la prof**)
+ Deuxièmement, il faut savoir que nous avons eu quelques explications sur les 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*)
  Partant de ce principe, il faut savoir quel type de données nous avons à traiter. Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Notre document est structuré de la manière suivante : 
   
 >   *{  <br/>
