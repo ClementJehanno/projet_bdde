@@ -43,8 +43,20 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
   
  Pour chaque ville nous avons certaines informations quand à sa position et surtout, les informations quand à la pollution.
  Ainsi le choix d'une base de données NoSQL orientée document semble légitime.
-  Nous avons donc décidé de partir sur une base en mongodb.
   
+   * MongoDB <br/>
+   Nous nous sommes donc orientés vers une base de donnée mongoDB pour les raisons plus haut.
+   Quelques notions d'utilisation de mongoDB :
+   Installation par le biais de la documentation officielle : https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/
+   Pour l'import nous avons utilisé la commande suivante : 
+   >mongoimport --jsonArray --db projetBDE --collection qualite_air --file /CHEMIN/qualite_air_bon_format.json
+   Les requêtes sont dans le fichier queries.txt présent dans le dépôt.
+   
+   * Le format JSON <br/>
+  Le format par mongoDB est en JSON ce qui justifie ce choix pour nos données qui sont aussi disponibles en CSV, etc.
+  
+  * Talend <br/>
+  Pour faire notre table d'aggrégats il nous est nécessaire de passer par Talend afin de regrouper **toutes** nos données, éliminer le bruit, les réagencer, et finalement les importer dans mongoDB.
   
 2. Datasets utilisés
 
