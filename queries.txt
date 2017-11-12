@@ -34,4 +34,29 @@ db.test_format.aggregate([{$group:{_id:"$VILLE.NOM",indice_qualite_air:{$avg:"$P
 
 db.test_format.aggregate([{$group:{_id:"$VILLE.NOM",indice_qualite_air:{$avg:"$POLLUTION_AIR.INDICE_QUALITE_AIR"},indice_souffre:{$avg:"$POLLUTION_SOUFFRE.VALEUR_LIMITE_MOY_HORAIRE_24H"}}}])
 
+db.test_format.aggregate([{$group:{_id:"$ville_commun", moy_montee_descente:{$avg:"$M/D_gare"}}}])
 
+
+Moi j'aimerai voir les locations qui ont la pollution moyenne au cours des dernières années la moins haute et voir si il y a une réserve naturelle proche
+
+En fait ici c'est compliqué, avec les bonnes datas ça sera ez
+
+db.test_format.aggregate([{$group:{_id:"$VILLE", pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}}}])
+
+db.test_format.aggregate([{$group:{_id:"$VILLE", pollution_moyenne:{$avg:"$INDICE_QUALITE_AIR"}, pollution_minimal:{$min:"$INDICE_QUALITE_AIR"}}}])
+
+Ok la ville d'ANgers a une moyenne en dioxide de carbone (car on sait que le carbon = voiture ? ) élevé, est-ce que le trafic l'est aussi ? Et on fait genre un group by sur tout ça pour comparer un peu genre voir si Nantes est elevé, est-ce que son trafic l'est, etc
+
+Alors attention à ne pas aller trop loin, là on est dans le big data comme nous a dit la prof donc c'est pas tant que ça notre boulot, nous faudrait juste des graphes avec des proportions
+
+Donc dans l'idée faudrait qu'on regarde la moyenne de pollution pour chaque ville
+Ainsi que la pollution, into petit graphe. Ez.
+
+db.test_format.aggregate([{$group:{_id:"$VILLE", pollution_moyenne:{$avg:"$INDICE_QUALITE_AIR"}}}])
+
+donc ici admettons j'ai une ville_proche
+ENsuite je peux faire une query sur la ville proche genre
+
+db.test_format.aggregate([{$group:{_id:"$ville_commun", moy_montee_descente:{$avg:"$M/D_gare"}}}])
+
+Normalement ça devrait filer des résultats concordants.

@@ -2,7 +2,8 @@
   "VILLE": {
     "NOM": "ANGERS",
     "LOCATION": "[47.468475, -0.555933333]",
-    "DATE": "01/01/2005"
+    "DATE": "01/01/2005",
+    "CODE_INSEE": 49007
   },
   "POLLUTION_AIR": {
     "INDICE_QUALITE_AIR": 1,
@@ -18,7 +19,7 @@
 		"OBJECTIF_QUALITE_MOY_ANNUELLE": 50,
 		"NOM_STATION": "BEAUX-ARTS",
 		"TYPO": "URBAINE",
-		"CODE_INSEE": 49007,
+	
 		"ANNEE": "2009",
 		"NB_JOURS_DEPASSEMENT_VALEUR_LIMITE_JOURNALIERE_3J": 0,
 		"MOY_JOUR_MAX": 9,
@@ -49,11 +50,13 @@
     "MOY_HORAIRE_MAX": 158,
     "MOY_ANNUELLE": 51
   },
-  "ROUTE": {
+}, {
+	"ROUTE": {
     "no_route": 666,
     "trafic_poid_lourd": 14040
   }
-}, {
+}, 
+{
   "VILLE": {
     "NOM": "ANGERS",
     "LOCATION": "[47.468475, -0.555933333]",
