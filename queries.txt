@@ -60,3 +60,12 @@ ENsuite je peux faire une query sur la ville proche genre
 db.test_format.aggregate([{$group:{_id:"$ville_commun", moy_montee_descente:{$avg:"$M/D_gare"}}}])
 
 Normalement ça devrait filer des résultats concordants.
+
+
+
+On pourrait aussi comparer les objectifs avec la réalité ?
+Histoire de voir si ils ont remplit leur job ou pas
+
+db.test_format.find({ville_commun:"test"},{objectif_theorique:1}, {realite:1})
+
+Evidemment en l'état ça fonctionne pas.
