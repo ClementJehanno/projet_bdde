@@ -29,7 +29,7 @@ Nous avons décidé de ne pas trop nous attarder sur des requêtes "basiques" l'
 
 On cherche à établir une corrélation entre la pollution des villes et le nombre de montées et descente des trains.
 Pour ce faire on aligne deux requêtes : 
-La première nous permet juste de regrouper par ville_proche les pollutions moyennes (requête 1).
+La première nous permet juste de regrouper par ville_proche les pollutions moyennes.
 
 db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", pollution_moyenne:{$avg:"$INDICE_QUALITE_AIR"}}}])
 
@@ -47,32 +47,4 @@ Voir par année l'évolution du trafic de bus, des montées/descente des gares e
 
 ------ Query 6 :
 
-Pour l'année 2009 on aimerai savoir combien de voiture sont passées. Pour ce faire on a le champ moyenne, on va donc faire la somme des moyennes pour chaque commune.
-
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_voiture:{$sum:"$Moyenne journalière annuelle tous véhicules en 2009"}}}])
-
-On a voulu augmenter la requête pour trouver la somme des poids_lourd :
-
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_voiture:{$sum:"$Moyenne journalière annuelle tous véhicules en 2009"}, somme_poids_lourd:{$sum:"$Moyenne journalière annuelle pour les poids lourds en 2009"}}}])
-
-Comme nos attributs sont appelés sur l'année on pourrait aussi comparer entre 2009 et 2010
-
-Par exemple pour les voitures :
-
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_voiture_2009:{$sum:"$Moyenne journalière annuelle tous véhicules en 2009"}, somme_voiture_2010:{$sum:"$Moyenne journalière annuelle tous véhicules en 2010"}}}])
-
-On peut aussi comparer voiture + poids lourds, etc.
-
-
------- Query 7 :
-
-Surface totale de réserve naturelle par commune de référence
-
------- Query 8 :
-
-
-
------- Query 9 :
-
-
------- Query 10 :
+La moyenne journalière annuelle pour l'année de 2009 autour d'une certaine commune.
