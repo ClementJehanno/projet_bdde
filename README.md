@@ -87,9 +87,24 @@ Nos requêtes sont disponibles dans le fichier queries.txt cependant nous allons
 > db.test_format.aggregate([{$group:{_id:"$VILLE", pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}}}]) <br/>
 
 La première partie 
-db.test_format.aggregate(<p><font color="red">[{$group:{_id:"$VILLE", </font></p>pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}}}]) <br/>
+> db.test_format.aggregate([{$group:{_id:"$VILLE", ........... }}}}]) <br/>
+
+
 regroupe par VILLE, il se base sur la clé VILLE pour faire son group by. Dans mongoDB cela se traduit par le champ _id: c'est lui donner la clé.<br/>
 La deuxième partie
-> db.test_format.aggregate([{$group:{_id:"$VILLE", <font color="red"> pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}</font>}}]) <br/>
+> db.test_format.aggregate([{$group:{......, indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
+
+
+Ici on fait la moyenne des indices de qualite de l'air. On pourrait rajouter d'autres champs (par exemple concernant le dioxyde d'azote ou encore le dioxyde de souffre)
+
+résultat:
+> { "_id" : "NANTES", "indice_qualite_air" : 3.8716401535929785 } <br/>
+> { "_id" : "LAVAL", "indice_qualite_air" : 3.7373944786675795 } <br/>
+> { "_id" : "ANGERS", "indice_qualite_air" : 3.9274469541409993 } <br/>
+> { "_id" : "CHOLET", "indice_qualite_air" : 3.9016655258955053 } <br/>
+> { "_id" : "LE MANS", "indice_qualite_air" : 3.841889117043121 } <br/>
+> { "_id" : null, "indice_qualite_air" : null } <br/>
+> { "_id" : "LA ROCHE-SUR-YON", "indice_qualite_air" : 3.891145595618439 } <br/>
+
 
 4.2 
