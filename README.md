@@ -87,7 +87,7 @@ Nos requêtes sont disponibles dans le fichier queries.txt cependant nous allons
 > db.test_format.aggregate([{$group:{_id:"$VILLE", pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}}}]) <br/>
 
 La première partie 
-db.test_format.aggregate(<font color="red">[{$group:{_id:"$VILLE", </font>pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}}}]) <br/>
+db.test_format.aggregate(<p><font color="red">[{$group:{_id:"$VILLE", </font></p>pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}}}]) <br/>
 regroupe par VILLE, il se base sur la clé VILLE pour faire son group by. Dans mongoDB cela se traduit par le champ _id: c'est lui donner la clé.<br/>
 La deuxième partie
 > db.test_format.aggregate([{$group:{_id:"$VILLE", <font color="red"> pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}</font>}}]) <br/>
