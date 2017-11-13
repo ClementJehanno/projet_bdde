@@ -52,7 +52,7 @@ Alors attention à ne pas aller trop loin, là on est dans le big data comme nou
 Donc dans l'idée faudrait qu'on regarde la moyenne de pollution pour chaque ville
 Ainsi que la pollution, into petit graphe. Ez.
 
-db.test_format.aggregate([{$group:{_id:"$VILLE", pollution_moyenne:{$avg:"$INDICE_QUALITE_AIR"}}}])
+db.test_format.aggregate([{$group:{_id:"$ville_commun", pollution_moyenne:{$avg:"$INDICE_QUALITE_AIR"}}}])
 
 donc ici admettons j'ai une ville_proche
 ENsuite je peux faire une query sur la ville proche genre
