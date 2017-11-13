@@ -2,24 +2,24 @@
 
 Regrouper les villes et leur pollution moyenne 
 
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}])
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF",indice_qualite_air:{$avg:"$Ind_qual_air"}}}])
 
 
 ------ Query 2 :
 
 Compter le nombre de ville dont le code couleur est "Vert" (ce qui correspond à un niveau de pollution bas)
 
-db.test_final.aggregate([{$match:{"CODE_COULEUR":{$eq:"VERT"}}},{$count :"nb_codes_vert"}])
+db.test_final.aggregate([{$match:{"Code_coul":{$eq:"VERT"}}},{$count :"nb_codes_vert"}])
 
 On a fait la même chose pour le niveau rouge
 
-db.test_final.aggregate([{$match:{"CODE_COULEUR":{$eq:"ROUGE"}}},{$count :"nb_codes_rouge"}])
+db.test_final.aggregate([{$match:{"Code_coul":{$eq:"ROUGE"}}},{$count :"nb_codes_rouge"}])
+
+db.test_final.aggregate([{$match:{"Code_coul":{$eq:"ORANGE"}}},{$count :"nb_codes_orange"}])
 
 ------ Query 3 :
 
-Regrouper les jours par indice de qualité de l'air moyen. Ainsi pour chaque jour on peut voir l'indice de qualité de l'air moyen dans les pays de la loire.
 
-db.test_final.aggregate([{$match:{"DATE":{$regex:'([0-9]*/[0-9]*/2015)'}}},{$group:{_id:{DATE:"$DATE"},indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}])
 
 ------ Pour aller un peu plus loin
 
@@ -31,7 +31,7 @@ On cherche à établir une corrélation entre la pollution des villes et le nomb
 Pour ce faire on aligne deux requêtes : 
 La première nous permet juste de regrouper par ville_proche les pollutions moyennes (requête 1).
 
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", pollution_moyenne:{$avg:"$INDICE_QUALITE_AIR"}}}])
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", pollution_moyenne:{$avg:"$Ind_qual_air"}}}])
 
 Ensuite on regarde, toujours par les villes les plus proches, la moyenne des montées et descente en gares.
 
@@ -39,40 +39,46 @@ db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:
 
 On peut donc au final traduire cette requête par la suivante : 
 
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Montees_descente_par_gare"},  pollution_moyenne:{$avg:"$INDICE_QUALITE_AIR"}}}])
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Montees_descente_par_gare"},  pollution_moyenne:{$avg:"$Ind_qual_air"}}}])
 
 ------ Query 5 :
 
-Voir par année l'évolution du trafic de bus, des montées/descente des gares et du trafic routier.
+Voir par année l'évolution des montées/descente des gares et du trafic routier.
+
+db.test_final.aggregate([{$group:{_id:"$Annee", somme_montee_descentes:{$sum:"$Mont_desc_gares"}, somme_trafic_routier:{$sum:"$Moy_jour_ann_tous_vehi"}}}])
+
+Pour avoir un joli affichage : 
+
+db.test_final.aggregate([{$group:{_id:"$Annee", somme_montee_descentes:{$sum:"$Mont_desc_gares"}, somme_trafic_routier:{$sum:"$Moy_jour_ann_tous_vehi"}}}, {$sort:{"_id":1}}])
 
 ------ Query 6 :
 
 Pour l'année 2009 on aimerai savoir combien de voiture sont passées. Pour ce faire on a le champ moyenne, on va donc faire la somme des moyennes pour chaque commune.
 
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_voiture:{$sum:"$Moyenne journalière annuelle tous véhicules en 2009"}}}])
+db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF", somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}}}])
 
 On a voulu augmenter la requête pour trouver la somme des poids_lourd :
 
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_voiture:{$sum:"$Moyenne journalière annuelle tous véhicules en 2009"}, somme_poids_lourd:{$sum:"$Moyenne journalière annuelle pour les poids lourds en 2009"}}}])
+db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF", somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"}}}])
 
 Comme nos attributs sont appelés sur l'année on pourrait aussi comparer entre 2009 et 2010
-
-Par exemple pour les voitures :
-
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_voiture_2009:{$sum:"$Moyenne journalière annuelle tous véhicules en 2009"}, somme_voiture_2010:{$sum:"$Moyenne journalière annuelle tous véhicules en 2010"}}}])
-
-On peut aussi comparer voiture + poids lourds, etc.
 
 
 ------ Query 7 :
 
 Surface totale de réserve naturelle par commune de référence
 
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_surface:{$sum:"$Surface_m2"}}}])
+
 ------ Query 8 :
 
+Récupérer les résèrves naturelles les plus proches des villes et voir sur ces résèrves et sur ces villes, lequelles ont l'indice de pollution le plus bas et voir si les résèrves naturelles sont proches ou pas
+
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_surface:{$sum:"$Surface_m2"}, indice_qualite_air:{$avg:"$Ind_qual_air"}}}, {$sort:{"somme_surface":-1}}])
 
 
 ------ Query 9 :
 
 
 ------ Query 10 :
+
