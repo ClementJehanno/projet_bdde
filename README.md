@@ -64,3 +64,32 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
 
 Les datasets que nous avons utilisés sont divers.
 Avant toute chose, en l'état actuel des choses nous n'avons travaillé que sur un seul dataset, mais, tout l'intéret du NoSQL consiste à regrouper différents datasets afin de garder les informations pertinentes et de faire des requêtes volumineuses et intéressantes, assez rapidement.
+
+3. Agrégats
+
+Comme dit précedemment il est nécessaire que nos données soient corrélées, et qu'on puisse en obtenir quelque chose de censé.
+Nous avons donc commencé par regrouper nos agrégats des différents fichiers, ainsi mettre les données de pollution dans la même collection que les données de trafic routier.
+Nous avons aussi profité de cette étape pour augmenter la consistance de nos données et ainsi avoir une richesse des données importantes.
+Au final nous avons regroupé 9 fichiers dans notre table.
+Ensuite il est venu la question de donner du sens à nos données. Nos données ont en commun des dates et des données gps. <br/>
+Le format de date nous pose un souci car dans certaines données nos dates sont au format JJ/MM/AAAA et dans d'autres au format MM/AAAA ou directement AAAA. Nous aurions pu directement traiter les données de sorte à ce que tout soit disponible à l'année, nous avons préféré essayer d'implémenter un mapreduce.
+Les données gps cependant nous sont pratiques. L'idée est la suivante : <br/>
+Toutes nos données ont des latitudes et des longitudes, qu'il s'agisse d'une borne routière, d'une station de gare ou bien même d'une ville.
+Pour donner du sens à nos requêtes il faut regrouper toutes ces données et traiter un périmètre, ainsi on pourra dire "aux alentours de Nantes il y a eu plus de personnes qui ont pris le train en 2016 que en 2015 et on constate aussi que la pollution aux alentours de Nantes a diminué entre 2016 et 2015."
+Nous allons chercher à donner du sens à nos données, difficile de les interpréter, peut-être que le facteur de baisse de pollution n'est pas exclusivement lié au fait que les gens prennent plus le train, mais il peut y avoir une corrélation.
+
+4. Requêtes
+
+Nos requêtes sont disponibles dans le fichier queries.txt cependant nous allons revenir sur certaines d'entre elle ici.
+
+4.1 Regrouper les villes et leur pollution moyenne 
+
+> db.test_format.aggregate([{$group:{_id:"$VILLE", pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}}}]) <br/>
+
+La première partie 
+> db.test_format.aggregate(<font color="red">[{$group:{_id:"$VILLE", </font>pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}}}]) <br/>
+regroupe par VILLE, il se base sur la clé VILLE pour faire son group by. Dans mongoDB cela se traduit par le champ _id: c'est lui donner la clé.<br/>
+La deuxième partie
+> db.test_format.aggregate([{$group:{_id:"$VILLE", <font color="red"> pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}</font>}}]) <br/>
+
+4.2 
