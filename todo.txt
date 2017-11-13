@@ -1,4 +1,10 @@
-Talend ok
-formater nos données proprement + aggréger proprement + queries intéressantes
-rapport = readme.md => Analyse en visuels graphiques
-diapo présentation => Analyse en visuels graphiques 
+13/11/2017
+
+Ecrire les requêtes
+
+Editer le readme.md
+=> Ajout script Pierre
+=> relecture Romain/Clément
+
+Graphiques / Ecrire la partie difficultés/amélios/conclusion dans le readme
+
