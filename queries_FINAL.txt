@@ -2,36 +2,37 @@
 
 Regrouper les villes et leur pollution moyenne 
 
-db.test_format.aggregate([{$group:{_id:"$VILLE",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}])
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}])
+
 
 ------ Query 2 :
 
 Compter le nombre de ville dont le code couleur est "Vert" (ce qui correspond à un niveau de pollution bas)
 
-db.test_format.aggregate([{$match:{"CODE_COULEUR":{$eq:"VERT"}}},{$count :"nb_codes_vert"}])
+db.test_final.aggregate([{$match:{"CODE_COULEUR":{$eq:"VERT"}}},{$count :"nb_codes_vert"}])
 
 On a fait la même chose pour le niveau rouge
 
-db.test_format.aggregate([{$match:{"CODE_COULEUR":{$eq:"ROUGE"}}},{$count :"nb_codes_rouge"}])
+db.test_final.aggregate([{$match:{"CODE_COULEUR":{$eq:"ROUGE"}}},{$count :"nb_codes_rouge"}])
 
 ------ Query 3 :
 
-Regrouper les jours par indice de qualité de l'air moyen. Ainsi pour chaque jour on peut voir l'indice de qualité de l'air.
+Regrouper les jours par indice de qualité de l'air moyen. Ainsi pour chaque jour on peut voir l'indice de qualité de l'air moyen dans les pays de la loire.
 
-db.test_format.aggregate([{$match:{"DATE":{$regex:'([0-9]*/[0-9]*/2015)'}}},{$group:{_id:{DATE:"$DATE"},indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}])
+db.test_final.aggregate([{$match:{"DATE":{$regex:'([0-9]*/[0-9]*/2015)'}}},{$group:{_id:{DATE:"$DATE"},indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}])
 
------- Pour aller un peu plus loins
+------ Pour aller un peu plus loin
 
 Nous avons décidé de ne pas trop nous attarder sur des requêtes "basiques" l'idée étant de pousser un peu noSQL pour voir ce que l'on pouvait faire
 
 ------ Query 4 :
 
 On cherche à établir une corrélation entre la pollution des villes et le nombre de montées et descente des trains.
-Pour se faire on aligne deux requêtes : 
+Pour ce faire on aligne deux requêtes : 
 La première nous permet juste de regrouper par ville_proche les pollutions moyennes.
 
-db.test_format.aggregate([{$group:{_id:"$ville_proche", pollution_moyenne:{$avg:"$INDICE_QUALITE_AIR"}}}])
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", pollution_moyenne:{$avg:"$INDICE_QUALITE_AIR"}}}])
 
 Ensuite on regarde, toujours par les villes les plus proches, la moyenne des montées et descente en gares.
 
-db.test_format.aggregate([{$group:{_id:"$ville_proche", moy_montee_descente:{$avg:"$M/D_gare"}}}])
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Montees_descente_par_gare"}}}])

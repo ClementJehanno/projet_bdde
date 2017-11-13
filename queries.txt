@@ -58,6 +58,8 @@ donc ici admettons j'ai une ville_proche
 ENsuite je peux faire une query sur la ville proche genre
 
 db.test_format.aggregate([{$group:{_id:"$ville_commun", moy_montee_descente:{$avg:"$M/D_gare"}}}])
+db.test_format.aggregate([{$match:{INDICE_QUALITE_AIR:{$ne:null}}},{$group:{_id:"$VILLE", moy_montee_descente:{$avg:"$INDICE_QUALITE_AIR"}}}])
+
 
 Normalement ça devrait filer des résultats concordants.
 
