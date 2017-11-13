@@ -83,7 +83,26 @@
 
 
 ------- Query 7
+> db.test_final.aggregate([{$match:{Nom_route:{$ne:null}}},{$group:{_id:"$COMMUNE_REF"}}])
+{ "_id" : "Roche-sur-Yon" }
+{ "_id" : "Cholet" }
+{ "_id" : "Nantes" }
+{ "_id" : "Saint-Nazaire" }
 
+
+
+> db.test_final.aggregate([{$match:{Nom_route:{$ne:null}}},{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+{ "Nom_route" : 118 }
+
+
+> db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Nantes"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+{ "Nom_route" : 81 }
+> db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Roche-sur-Yon"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+{ "Nom_route" : 2 }
+> db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Cholet"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+{ "Nom_route" : 7 }
+> db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Saint-Nazaire"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+{ "Nom_route" : 41 }
 
 
 ------- Query 8

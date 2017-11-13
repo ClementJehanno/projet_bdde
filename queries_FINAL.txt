@@ -71,6 +71,28 @@ Comme nos attributs sont appelés sur l'année on pourrait aussi comparer entre 
 
 Requêtes pour avoir le nombre de routes dans une commune et l'écart type de qualité de l'air dans cette commune de réference
 
+
+La requête pour avoir les villes :
+
+db.test_final.aggregate([{$match:{Nom_route:{$ne:null}}},{$group:{_id:"$COMMUNE_REF"}}])
+
+ça on sait que ça nous donne 4 villes donc on décompose
+
+Nombre total de routes :
+db.test_final.aggregate([{$match:{Nom_route:{$ne:null}}},{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+
+Détail :
+db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Nantes"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+
+db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Roche-sur-Yon"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+
+db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Cholet"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+
+db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Saint-Nazaire"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
+
+
+
+
 ------ Query 8 :
 
 Récupérer les résèrves naturelles les plus proches des villes et voir sur ces résèrves et sur ces villes, lequelles ont l'indice de pollution le plus bas et voir si les résèrves naturelles sont proches ou pas
