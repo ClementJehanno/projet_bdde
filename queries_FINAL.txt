@@ -1,0 +1,17 @@
+------ Query 1 :
+
+Regrouper les villes et leur pollution moyenne 
+
+db.test_format.aggregate([{$group:{_id:"$VILLE",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}])
+
+------ Query 2 :
+
+Compter le nombre de ville dont le code couleur est "Vert" (ce qui correspond à un niveau de pollution bas)
+
+db.test_format.aggregate([{$match:{"CODE_COULEUR":{$eq:"VERT"}}},{$count :"nb_codes_vert"}])
+
+On a fait la même chose pour le niveau rouge
+
+db.test_format.aggregate([{$match:{"CODE_COULEUR":{$eq:"ROUGE"}}},{$count :"nb_codes_rouge"}])
+
+------ Query 3 :

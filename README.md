@@ -19,7 +19,7 @@ Il faudra donc refaire nos aggrégats proprement.
 
 # Instructions 
 
-1. Outils
+## 1. Outils
 
 Le choix de notre base de donnée s'est orientée vers une base NoSQL.
  * Pourquoi le NoSQL ? <br/>
@@ -60,12 +60,12 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
   * Talend <br/>
   Pour faire notre table d'aggrégats il nous est nécessaire de passer par Talend afin de regrouper **toutes** nos données, éliminer le bruit, les réagencer, et finalement les importer dans mongoDB.
   
-2. Datasets utilisés
+## 2. Datasets utilisés
 
 Les datasets que nous avons utilisés sont divers.
 Avant toute chose, en l'état actuel des choses nous n'avons travaillé que sur un seul dataset, mais, tout l'intéret du NoSQL consiste à regrouper différents datasets afin de garder les informations pertinentes et de faire des requêtes volumineuses et intéressantes, assez rapidement.
 
-3. Agrégats
+## 3. Agrégats
 
 Comme dit précedemment il est nécessaire que nos données soient corrélées, et qu'on puisse en obtenir quelque chose de censé.
 Nous avons donc commencé par regrouper nos agrégats des différents fichiers, ainsi mettre les données de pollution dans la même collection que les données de trafic routier.
@@ -78,13 +78,13 @@ Toutes nos données ont des latitudes et des longitudes, qu'il s'agisse d'une bo
 Pour donner du sens à nos requêtes il faut regrouper toutes ces données et traiter un périmètre, ainsi on pourra dire "aux alentours de Nantes il y a eu plus de personnes qui ont pris le train en 2016 que en 2015 et on constate aussi que la pollution aux alentours de Nantes a diminué entre 2016 et 2015."
 Nous allons chercher à donner du sens à nos données, difficile de les interpréter, peut-être que le facteur de baisse de pollution n'est pas exclusivement lié au fait que les gens prennent plus le train, mais il peut y avoir une corrélation.
 
-4. Requêtes
+## 4. Requêtes
 
-Nos requêtes sont disponibles dans le fichier queries.txt cependant nous allons revenir sur certaines d'entre elle ici.
+Nos requêtes sont disponibles dans le fichier queries_FINAL.txt cependant nous allons revenir sur certaines d'entre elle ici.
 
-4.1 Regrouper les villes et leur pollution moyenne 
+### 4.1 Regrouper les villes et leur pollution moyenne 
 
-> db.test_format.aggregate([{$group:{_id:"$VILLE", pollution_moyenne:{$min:{$avg:"$INDICE_QUALITE_AIR"}}}}]) <br/>
+> db.test_format.aggregate([{$group:{_id:"$VILLE",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
 
 La première partie 
 > db.test_format.aggregate([{$group:{_id:"$VILLE", ........... }}}}]) <br/>
@@ -107,4 +107,4 @@ résultat:
 > { "_id" : "LA ROCHE-SUR-YON", "indice_qualite_air" : 3.891145595618439 } <br/>
 
 
-4.2 
+### 4.2 

@@ -14,7 +14,7 @@ db.qualite_air.aggregate([{$group:{_id:"$VILLE",indice_particules_fine_moyen:{$a
 db.qualite_air.aggregate([{$group:{_id:"$VILLE",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}])
 
 db.qualite_air.aggregate([{$match:{"CODE_COULEUR":{$eq:"ROUGE"}}},{$count :"nb_codes_rouge"}])
-db.qualite_air.aggregate([{$match:{"CODE_COULEUR":{$eq:"VERT"}}},{$count :"nb_codes_rouge"}])
+db.qualite_air.aggregate([{$match:{"CODE_COULEUR":{$eq:"VERT"}}},{$count :"nb_codes_vert"}])
 
 db.qualite_air.aggregate([{$match:{"VILLE":{$eq:"ANGERS"}}},{$count : "nb_occurence_angers"}])
 
