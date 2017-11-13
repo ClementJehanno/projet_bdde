@@ -20,6 +20,9 @@ db.test_final.aggregate([{$match:{"Code_coul":{$eq:"ORANGE"}}},{$count :"nb_code
 ------ Query 3 :
 
 
+Surface totale de réserve naturelle par commune de référence
+
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_surface:{$sum:"$Surface_m2"}}}])
 
 ------ Pour aller un peu plus loin
 
@@ -66,9 +69,7 @@ Comme nos attributs sont appelés sur l'année on pourrait aussi comparer entre 
 
 ------ Query 7 :
 
-Surface totale de réserve naturelle par commune de référence
-
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_surface:{$sum:"$Surface_m2"}}}])
+Requêtes pour avoir le nombre de routes dans une commune et l'écart type de qualité de l'air dans cette commune de réference
 
 ------ Query 8 :
 
@@ -76,6 +77,9 @@ Récupérer les résèrves naturelles les plus proches des villes et voir sur ce
 
 db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", somme_surface:{$sum:"$Surface_m2"}, indice_qualite_air:{$avg:"$Ind_qual_air"}}}, {$sort:{"somme_surface":-1}}])
 
+Si on veut afficher les noms des réserves
+
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", nom:{$push:"$Nom_res_nat"}, somme_surface:{$sum:"$Surface_m2"}, indice_qualite_air:{$avg:"$Ind_qual_air"}}}, {$sort:{"somme_surface":-1}}])
 
 ------ Query 9 :
 
