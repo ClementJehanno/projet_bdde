@@ -12,14 +12,12 @@ Ceci est le github associé à notre projet de base de données
 * Requêtes
 
 
-
 # Présentation du sujet
 
 Nous avons choisi d'étudier la qualité de l'air dans la région des Pays de la Loire.
 L'idée à court terme était de pouvoir obtenir quelques informations concernant le niveau moyen de qualité de l'air, voir quelles villes sont plus ou moins bien placées etc.
 Nos données sont réparties par région, code postal, qualité de l'air ainsi que d'autres facteurs de qualité, etc.
-A terme l'idée est de faire nos aggrégats avec différentes données en les passants dans Talend et ainsi en augmentant la taille de nos données en recoupants plusieurs données différentes.
-Il faudra donc refaire nos aggrégats proprement.
+A terme l'idée est de faire nos aggrégats en regroupant des données différentes et ainsi augmenter la taille de nos données.
 
 # Instructions
 
@@ -27,9 +25,9 @@ Il faudra donc refaire nos aggrégats proprement.
 
 Le choix de notre base de donnée s'est orientée vers une base NoSQL.
  * Pourquoi le NoSQL ? <br/>
-Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir déjà fait du Oracle l'année passée et avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir pourquoi.
- Deuxièmement, il faut savoir que nous avons eu quelques explications sur les 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*)
- Partant de ce principe, il faut savoir quel type de données nous avons à traiter. Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Le document qualité de l'air est structuré de la manière suivante :
+Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir déjà fait du Oracle l'année passée et avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir comment était le langage et quelles étaient ses possibilités.
+ Deuxièmement, comme nous avons eu des explications sur les 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*) il faut savoir quel type de données nous avons à traiter. 
+ Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Le document qualité de l'air est structuré de la manière suivante :
 
 >   *{  <br/>
 >    "VILLE": "ANGERS",  <br/>
@@ -47,6 +45,7 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
 
  Pour chaque ville nous avons certaines informations quand à sa position et surtout, les informations quand à la pollution.
  Ainsi le choix d'une base de données NoSQL orientée document semble légitime.
+ 
  Cependant, nous verrons par la suite que ce n'est pas le seul document que nous traitons. Il sera donc nécessaire de travailler nos données pour refaire nos aggrégats.
 
    * MongoDB <br/>
@@ -62,7 +61,7 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
 ## 2. Datasets utilisés
 
 Les datasets que nous avons utilisés sont divers.
-Avant toute chose, en l'état actuel des choses nous n'avons travaillé que sur un seul dataset, mais, tout l'intéret du NoSQL consiste à regrouper différents datasets afin de garder les informations pertinentes et de faire des requêtes volumineuses et intéressantes, assez rapidement.
+Avant toute chose, en l'état actuel des choses nous n'avons travaillé que sur un seul dataset, mais, tout l'intéret du NoSQL consiste à regrouper différents datasets afin de garder les informations pertinentes et de faire des requêtes volumineuses et intéressantes, assez rapidement sur un seul gros json qui contient **toutes** les informations.
 
 ## 3. Agrégats
 
@@ -113,7 +112,7 @@ Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de l
 
 ## 4. Requêtes
 
-Une fois que nos aggrégats sont fait. Regroupés dans la même base et avec un point de référence proche.
+Une fois que nos aggrégats sont fait et regroupés dans la même base et avec un point de référence proche.
 Nos vous invitons à consulter toutes nos requêtes qui sont disponibles dans le fichier queries_FINAL.txt. 
 Dans cette section nous allons revenir sur certaines d'entre elle afin de les expliquer.
 
