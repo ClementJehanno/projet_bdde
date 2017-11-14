@@ -104,6 +104,15 @@
 > db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Saint-Nazaire"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
 { "Nom_route" : 41 }
 
+> db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", min:{$min:"$Ind_qual_air"}, max:{$max:"$Ind_qual_air"} }}])
+{ "_id" : "Cholet", "min" : 2, "max" : 9 }
+{ "_id" : "Roche-sur-Yon", "min" : 1, "max" : "" }
+{ "_id" : "Laval", "min" : 2, "max" : 9 }
+{ "_id" : "Mans", "min" : 2, "max" : 10 }
+{ "_id" : "Nantes", "min" : 2, "max" : 9 }
+{ "_id" : "Saint-Nazaire", "min" : 2, "max" : 10 }
+{ "_id" : "Angers", "min" : 2, "max" : 9 }
+
 
 ------- Query 8
 

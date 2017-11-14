@@ -38,11 +38,11 @@ db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", pollution_moyenne:{$avg:"$
 
 Ensuite on regarde, toujours par les villes les plus proches, la moyenne des montées et descente en gares.
 
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Montees_descente_par_gare"}}}])
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Mont_desc_gares"}}}])
 
 On peut donc au final traduire cette requête par la suivante : 
 
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Montees_descente_par_gare"},  pollution_moyenne:{$avg:"$Ind_qual_air"}}}])
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Mont_desc_gares"},  pollution_moyenne:{$avg:"$Ind_qual_air"}}}])
 
 ------ Query 5 :
 
@@ -62,7 +62,7 @@ db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF
 
 On a voulu augmenter la requête pour trouver la somme des poids_lourd :
 
-db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF", somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"}}}])
+db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF",  pollution_moyenne:{$avg:"$Ind_qual_air"},  somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"}}}])
 
 Comme nos attributs sont appelés sur l'année on pourrait aussi comparer entre 2009 et 2010
 
@@ -90,6 +90,10 @@ db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:
 
 db.test_final.aggregate([{$match:{ $and: [ {Nom_route:{$ne:null}}, {COMMUNE_REF:{$eq:"Saint-Nazaire"}} ] } },{$group:{_id:"$Nom_route"}}, {$count:"Nom_route"}])
 
+Pour avoir l'écart type des villes :
+
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", min:{$min:"$Ind_qual_air"}, max:{$max:"$Ind_qual_air"} }}])
+
 
 
 
@@ -104,6 +108,10 @@ Si on veut afficher les noms des réserves
 db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", nom:{$push:"$Nom_res_nat"}, somme_surface:{$sum:"$Surface_m2"}, indice_qualite_air:{$avg:"$Ind_qual_air"}}}, {$sort:{"somme_surface":-1}}])
 
 ------ Query 9 :
+
+Par année, par commune, la moyenne de la qualité de l'air ainsi que la moyenne des sous indices.
+
+db.test_final.aggregate([{$group:{_id:{Annee:"$Annee", Region:"$COMMUNE_REF"}, moyenne_qualite_air:{$avg:"$Ind_qual_air"}, moyenne_sous_indice_ozone:{$avg:"$Sous_ind_ozone"}, moyenne_sous_indice_particules_fine:{$avg:"$Sous_ind_particules_fines"}, moyenne_sous_indice_azote:{$avg:"$Sous_ind_part_azote"}, moyenne_sous_indice_particules_souffre:{$avg:"$Sous_ind_part_souffre"} }}])
 
 
 ------ Query 10 :
