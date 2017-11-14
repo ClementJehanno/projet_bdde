@@ -3,7 +3,7 @@ Ceci est le github associé à notre projet de base de données
 
 # Plan
 
-* [Présentation du sujet](#Présentation du sujet)
+* [Présentation du sujet](#pres)
 * Instructions
   * Outils
   * Datasets utilisés
@@ -12,7 +12,7 @@ Ceci est le github associé à notre projet de base de données
 * Requêtes
 
 
-# Présentation du sujet
+# <a name="pres"></a> Présentation du sujet
 
 Nous avons choisi d'étudier la qualité de l'air dans la région des Pays de la Loire.
 L'idée à court terme était de pouvoir obtenir quelques informations concernant le niveau moyen de qualité de l'air, voir quelles villes sont plus ou moins bien placées etc.
