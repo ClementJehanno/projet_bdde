@@ -174,3 +174,40 @@ db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF
 La requête "match" sur toutes les valeurs dont le champ année vaut 2009 puis nous groupons par commune et ajoutons les champs nécessaires à nos moyennes.
 
 ![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_6.png "Graphe résultat requête 6")
+
+
+### 4.4 Répartition des surfaces des réserves naturelles
+
+Cette requête est la requête numéro 8 :
+
+Par année, par commune, la moyenne de la qualité de l'air ainsi que la moyenne des sous indices.
+
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", nom:{$push:"$Nom_res_nat"}, somme_surface:{$sum:"$Surface_m2"}, indice_qualite_air:{$avg:"$Ind_qual_air"}}}, {$sort:{"somme_surface":-1}}])
+
+Cette requête va regrouper en fonction des villes proches, les réserves naturelles qui y sont associées ainsi que leur surface.
+
+Nous avons coupé la requête en deux graphiques.
+
+Le premier exhibe pour les villes l'indice de qualité d'air moyen.
+
+![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_8_2.png)
+
+Le deuxième nous montre bien, par ville, l'espace de réserves naturelles qui sont à proximité
+
+![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_8_1.png)
+
+
+### 4.5 Q_9
+
+Cette requête est la requête numéro 9 :
+
+Elle regroupe par année et commune les indices de pollution par ville, elle nous permet de tracer des requêtes spécifiques sur chaque ville avec un détail à l'année contrairement aux précédentes qui étaient sur la totalité de la période.
+
+db.test_final.aggregate([{$group:{_id:{Annee:"$Annee", Region:"$COMMUNE_REF"}, moyenne_qualite_air:{$avg:"$Ind_qual_air"}, moyenne_sous_indice_ozone:{$avg:"$Sous_ind_ozone"}, moyenne_sous_indice_particules_fine:{$avg:"$Sous_ind_particules_fines"}, moyenne_sous_indice_azote:{$avg:"$Sous_ind_part_azote"}, moyenne_sous_indice_particules_souffre:{$avg:"$Sous_ind_part_souffre"}, somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"},somme_montee_descente:{$sum:"$Mont_desc_gares"} }}, {$sort:{"_id":-1}} ])
+
+Elle regroupe donc par année et par ville proche les indices respectifs de pollution. 
+Nous avons tracé deux graphiques : l'un pour Nantes et l'autre pour le Mans de l'indice global :
+
+![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graphe_9_Mans.png)
+
+![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graphe_9_Nantes.png)
