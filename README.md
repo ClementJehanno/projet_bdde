@@ -113,7 +113,7 @@ Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de l
 ## 4. Requêtes
 
 Une fois que nos aggrégats sont fait et regroupés dans la même base et avec un point de référence proche nous pouvons commencer à faire des requêtes dessus.
-Nos vous invitons à consulter toutes nos requêtes qui sont disponibles dans le fichier [queries_rendu.txt](https://github.com/ClementJehanno/projet_bdde/blob/master/queries_rendu.txt). ou bien dans le dossier [/Queries_Results/js](https://github.com/ClementJehanno/projet_bdde/tree/master/Queries_Results/js)
+Nos vous invitons à consulter toutes nos requêtes qui sont disponibles dans le fichier [queries_rendu.txt](https://github.com/ClementJehanno/projet_bdde/blob/master/queries_rendu.txt) ou bien dans le dossier [/Queries_Results/js](https://github.com/ClementJehanno/projet_bdde/tree/master/Queries_Results/js)
 Dans cette section nous allons revenir sur certaines d'entre elle afin de les expliquer.
 
 ### 4.1 Regrouper les villes et leur pollution moyenne
