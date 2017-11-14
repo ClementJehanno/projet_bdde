@@ -1,0 +1,44 @@
+[
+		{
+			"_id" : "Roche-sur-Yon",
+			"somme_voiture" : 11386,
+			"somme_poids_lourd" : 1175,
+			"moy_qual" : 3.852054794520548
+		},
+		{
+			"_id" : "Cholet",
+			"somme_voiture" : 2626,
+			"somme_poids_lourd" : 132,
+			"moy_qual" : 3.8438356164383563
+		},
+		{
+			"_id" : "Laval",
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"moy_qual" : 3.591780821917808
+		},
+		{
+			"_id" : "Mans",
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"moy_qual" : 3.8109589041095893
+		},
+		{
+			"_id" : "Saint-Nazaire",
+			"somme_voiture" : 398907,
+			"somme_poids_lourd" : 23404,
+			"moy_qual" : 3.745205479452055
+		},
+		{
+			"_id" : "Angers",
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"moy_qual" : 3.8876712328767122
+		},
+		{
+			"_id" : "Nantes",
+			"somme_voiture" : 734801,
+			"somme_poids_lourd" : 49170,
+			"moy_qual" : 3.7835616438356166
+		}
+]

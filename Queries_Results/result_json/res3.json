@@ -1,0 +1,30 @@
+[
+		{
+			"_id" : "Angers",
+			"somme_surface" : 2667627
+		},
+		{
+			"_id" : "Saint-Nazaire",
+			"somme_surface" : 10516957
+		},
+		{
+			"_id" : "Nantes",
+			"somme_surface" : 7407544
+		},
+		{
+			"_id" : "Mans",
+			"somme_surface" : 568094
+		},
+		{
+			"_id" : "Laval",
+			"somme_surface" : 12807
+		},
+		{
+			"_id" : "Roche-sur-Yon",
+			"somme_surface" : 4873720
+		},
+		{
+			"_id" : "Cholet",
+			"somme_surface" : 0
+		}
+]

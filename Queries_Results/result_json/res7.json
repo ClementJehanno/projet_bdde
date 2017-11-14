@@ -1,0 +1,65 @@
+[
+		{
+			"_id" : "Saint-Nazaire"
+		},
+		{
+			"_id" : "Nantes"
+		},
+		{
+			"_id" : "Cholet"
+		},
+		{
+			"_id" : "Roche-sur-Yon"
+		},
+        {
+			"_id" : "Angers",
+			"min" : 2,
+			"max" : 9
+		},
+		{
+			"_id" : "Saint-Nazaire",
+			"min" : 2,
+			"max" : 10
+		},
+		{
+			"_id" : "Nantes",
+			"min" : 2,
+			"max" : 9
+		},
+		{
+			"_id" : "Mans",
+			"min" : 2,
+			"max" : 10
+		},
+		{
+			"_id" : "Laval",
+			"min" : 2,
+			"max" : 9
+		},
+		{
+			"_id" : "Roche-sur-Yon",
+			"min" : 1,
+			"max" : ""
+		},
+		{
+			"_id" : "Cholet",
+			"min" : 2,
+			"max" : 9
+		},
+        {
+			"Nb_route_total" : 118
+		},
+        {
+			"Nb_route_Nantes" : 81
+		},
+        {
+			"Nb_route_RochesurYon" : 2
+		},
+        {
+			"Nb_route_Cholet" : 7
+		},
+		{
+			"Nb_route_SaintNazaire" : 41
+		}
+]
+	

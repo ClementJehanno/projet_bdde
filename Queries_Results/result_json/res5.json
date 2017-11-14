@@ -1,0 +1,67 @@
+[
+		{
+			"_id" : 2016,
+			"somme_montee_descentes" : 166206,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2015,
+			"somme_montee_descentes" : 90105,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2014,
+			"somme_montee_descentes" : 0,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2013,
+			"somme_montee_descentes" : 85004,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2012,
+			"somme_montee_descentes" : 0,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2011,
+			"somme_montee_descentes" : 0,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2010,
+			"somme_montee_descentes" : 72520,
+			"somme_trafic_routier" : 1947392
+		},
+		{
+			"_id" : 2009,
+			"somme_montee_descentes" : 0,
+			"somme_trafic_routier" : 1147720
+		},
+		{
+			"_id" : 2008,
+			"somme_montee_descentes" : 65249,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2007,
+			"somme_montee_descentes" : 65077,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2006,
+			"somme_montee_descentes" : 61163,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2005,
+			"somme_montee_descentes" : 67128,
+			"somme_trafic_routier" : 0
+		},
+		{
+			"_id" : 2004,
+			"somme_montee_descentes" : 55802,
+			"somme_trafic_routier" : 0
+		}
+]

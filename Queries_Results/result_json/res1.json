@@ -1,0 +1,30 @@
+[
+		{
+			"_id" : "Angers",
+			"indice_qualite_air" : 3.9274469541409993
+		},
+		{
+			"_id" : "Saint-Nazaire",
+			"indice_qualite_air" : 3.953912845083276
+		},
+		{
+			"_id" : "Nantes",
+			"indice_qualite_air" : 3.874287018024184
+		},
+		{
+			"_id" : "Mans",
+			"indice_qualite_air" : 3.841889117043121
+		},
+		{
+			"_id" : "Laval",
+			"indice_qualite_air" : 3.7373944786675795
+		},
+		{
+			"_id" : "Roche-sur-Yon",
+			"indice_qualite_air" : 3.891145595618439
+		},
+		{
+			"_id" : "Cholet",
+			"indice_qualite_air" : 3.9016655258955053
+		}
+]

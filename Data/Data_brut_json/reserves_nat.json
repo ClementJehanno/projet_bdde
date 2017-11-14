@@ -1,0 +1,182 @@
+[
+  {
+    "nat_Nom_res_nat": "Lac de Grand-Lieu",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/lac-de-grand-lieu/",
+    "nat_Commune": "SAINT-PHILBERT-DE-GRAND-LIEU",
+    "nat_Departement": 44,
+    "nat_Surface_m2": 6318381,
+    "nat_Latitude": 47.091308197,
+    "nat_Longitude": -1.655774109
+  },
+  {
+    "nat_Nom_res_nat": "Prairies et roselière des Dureaux",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/prairies-et-roseliere-des-dureaux/",
+    "nat_Commune": "VAAS",
+    "nat_Departement": 72,
+    "nat_Surface_m2": 104371,
+    "nat_Latitude": 47.662390401,
+    "nat_Longitude": 0.289792756
+  },
+  {
+    "nat_Nom_res_nat": "Coteau et prairies des Caforts",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/coteau-et-prairies-des-caforts/",
+    "nat_Commune": "LUCHE-PRINGE",
+    "nat_Departement": 72,
+    "nat_Surface_m2": 32031,
+    "nat_Latitude": 47.698772904,
+    "nat_Longitude": 0.10278014
+  },
+  {
+    "nat_Nom_res_nat": "Coteau et Plateau de Tessé",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/coteau-et-plateau-de-tesse/",
+    "nat_Commune": "VILLAINES-LA-CARELLE",
+    "nat_Departement": 72,
+    "nat_Surface_m2": 55530,
+    "nat_Latitude": 48.366265916,
+    "nat_Longitude": 0.32010389
+  },
+  {
+    "nat_Nom_res_nat": "Tourbière de Logné",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/tourbiere-de-logne-une-zone-humide-exceptionnelle/",
+    "nat_Commune": "CARQUEFOU",
+    "nat_Departement": 44,
+    "nat_Surface_m2": 609255,
+    "nat_Latitude": 47.326320018,
+    "nat_Longitude": -1.503496205
+  },
+  {
+    "nat_Nom_res_nat": "Marais communal du Poiré-sur-Velluire",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/marais-communal-du-poire-sur-velluire/",
+    "nat_Commune": "LE POIRE SUR VELLUIRE",
+    "nat_Departement": 85,
+    "nat_Surface_m2": 2438021,
+    "nat_Latitude": 46.415918868,
+    "nat_Longitude": -0.9285765
+  },
+  {
+    "nat_Nom_res_nat": "Bocage humide des Cailleries",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/marais-de-la-vacherie/",
+    "nat_Commune": "SAINT COLOMBAN",
+    "nat_Departement": 44,
+    "nat_Surface_m2": 181160,
+    "nat_Latitude": 47.03916938,
+    "nat_Longitude": -1.509926506
+  },
+  {
+    "nat_Nom_res_nat": "Ferme de Choisy",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/ferme-de-choisy/",
+    "nat_Commune": "SAINT MICHEL EN L'HERM",
+    "nat_Departement": 85,
+    "nat_Surface_m2": 775607,
+    "nat_Latitude": 46.387632425,
+    "nat_Longitude": -1.258345273
+  },
+  {
+    "nat_Nom_res_nat": "Basses-Brosses et Chevalleries",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/fermes-de-basses-brosses-et-chevalleries/",
+    "nat_Commune": "BOUCHEMAINE",
+    "nat_Departement": 49,
+    "nat_Surface_m2": 996720,
+    "nat_Latitude": 47.41398952,
+    "nat_Longitude": -0.643195188
+  },
+  {
+    "nat_Nom_res_nat": "Etang du Pont de Fer",
+    "nat_Url": "http://www.paysdelaloire.fr/uploads/tx_oxcsnewsfiles/060516.rnr_pontdefer.pdf",
+    "nat_Commune": "ASSERAC",
+    "nat_Departement": 44,
+    "nat_Surface_m2": 524226,
+    "nat_Latitude": 47.466629224,
+    "nat_Longitude": -2.421861883
+  },
+  {
+    "nat_Nom_res_nat": "Bas-marais tourbeux de la Basse Goulandière",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/bas-marais-tourbeux-de-la-basse-goulandiere/",
+    "nat_Commune": "PARIGNE-L'EVEQUE",
+    "nat_Departement": 72,
+    "nat_Surface_m2": 376162,
+    "nat_Latitude": 47.932261357,
+    "nat_Longitude": 0.334714124
+  },
+  {
+    "nat_Nom_res_nat": "Ferme bocagère de la Chauffetière",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/ferme-bocagere-de-la-chauffetiere/",
+    "nat_Commune": "DRAIN",
+    "nat_Departement": 49,
+    "nat_Surface_m2": 298748,
+    "nat_Latitude": 47.318580763,
+    "nat_Longitude": -1.178917444
+  },
+  {
+    "nat_Nom_res_nat": "Polder de Sébastopol",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/polder-de-sebastopol/",
+    "nat_Commune": "BARBATRE",
+    "nat_Departement": 85,
+    "nat_Surface_m2": 1281162,
+    "nat_Latitude": 46.943444217,
+    "nat_Longitude": -2.157332199
+  },
+  {
+    "nat_Nom_res_nat": "Coteaux du Pont-Barré",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/coteaux-du-pont-barre/",
+    "nat_Commune": "BEAULIEU-SUR-LAYON",
+    "nat_Departement": 49,
+    "nat_Surface_m2": 85643,
+    "nat_Latitude": 47.317444145,
+    "nat_Longitude": -0.619823415
+  },
+  {
+    "nat_Nom_res_nat": "Marais de la Vacherie",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/marais-de-la-vacherie/",
+    "nat_Commune": "CHAMPAGNE-LES-MARAIS",
+    "nat_Departement": 85,
+    "nat_Surface_m2": 1660092,
+    "nat_Latitude": 46.395970074,
+    "nat_Longitude": -1.110559499
+  },
+  {
+    "nat_Nom_res_nat": "Marais de Cré-sur-Loir/La Flèche",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/marais-de-cre-sur-loirla-fleche/",
+    "nat_Commune": "CRE et LA FLECHE",
+    "nat_Departement": 72,
+    "nat_Surface_m2": 637767,
+    "nat_Latitude": 47.681375265,
+    "nat_Longitude": -0.143286088
+  },
+  {
+    "nat_Nom_res_nat": "Landes et tourbière des Egoutelles",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/landes-et-tourbiere-des-egoutelles/",
+    "nat_Commune": "VILLEPAIL",
+    "nat_Departement": 53,
+    "nat_Surface_m2": 12807,
+    "nat_Latitude": 48.391010844,
+    "nat_Longitude": -0.266135659
+  },
+  {
+    "nat_Nom_res_nat": "Espace dunaire de la Pointe Saint-Gildas",
+    "nat_Url": "http://www.paysdelaloire.fr/index.php?id=9239",
+    "nat_Commune": "PREFAILLES",
+    "nat_Departement": 44,
+    "nat_Surface_m2": 130026,
+    "nat_Latitude": 47.132636081,
+    "nat_Longitude": -2.24390603
+  },
+  {
+    "nat_Nom_res_nat": "Marais de Brière",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/rnr-ferme-de-choisy-copie-1/",
+    "nat_Commune": "SAINT JOACHIM/SAINT MALO DE GUERSAC",
+    "nat_Departement": 44,
+    "nat_Surface_m2": 8581543,
+    "nat_Latitude": 47.360845813,
+    "nat_Longitude": -2.249365943
+  },
+  {
+    "nat_Nom_res_nat": "Étang et boisements de Joreau",
+    "nat_Url": "http://www.paysdelaloire.fr/decouvrir/reserves-regionales/actu-detaillee/n/rnr-etang-et-boisements-de-joreau/",
+    "nat_Commune": "GENNES",
+    "nat_Departement": 49,
+    "nat_Surface_m2": 947497,
+    "nat_Latitude": 47.325245,
+    "nat_Longitude": -0.222788
+  }
+]

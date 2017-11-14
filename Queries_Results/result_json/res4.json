@@ -1,0 +1,37 @@
+[
+		{
+			"_id" : "Angers",
+			"moy_montee_descente" : 820,
+			"pollution_moyenne" : 3.9274469541409993
+		},
+		{
+			"_id" : "Saint-Nazaire",
+			"moy_montee_descente" : 359.42857142857144,
+			"pollution_moyenne" : 3.953912845083276
+		},
+		{
+			"_id" : "Nantes",
+			"moy_montee_descente" : 1230.3256880733945,
+			"pollution_moyenne" : 3.874287018024184
+		},
+		{
+			"_id" : "Mans",
+			"moy_montee_descente" : 709.2408759124088,
+			"pollution_moyenne" : 3.841889117043121
+		},
+		{
+			"_id" : "Laval",
+			"moy_montee_descente" : 344.6741573033708,
+			"pollution_moyenne" : 3.7373944786675795
+		},
+		{
+			"_id" : "Roche-sur-Yon",
+			"moy_montee_descente" : 264.7945205479452,
+			"pollution_moyenne" : 3.891145595618439
+		},
+		{
+			"_id" : "Cholet",
+			"moy_montee_descente" : 298.75,
+			"pollution_moyenne" : 3.9016655258955053
+		}
+]

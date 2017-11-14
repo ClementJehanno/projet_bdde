@@ -1,0 +1,70 @@
+[
+		{
+			"_id" : "Cholet",
+			"nom" : [ ],
+			"somme_surface" : 0,
+			"indice_qualite_air" : 3.9016655258955053
+		},
+		{
+			"_id" : "Laval",
+			"nom" : [
+				"Landes et tourbière des Egoutelles"
+			],
+			"somme_surface" : 12807,
+			"indice_qualite_air" : 3.7373944786675795
+		},
+		{
+			"_id" : "Mans",
+			"nom" : [
+				"Prairies et roselière des Dureaux",
+				"Coteau et prairies des Caforts",
+				"Coteau et Plateau de Tessé",
+				"Bas-marais tourbeux de la Basse Goulandière"
+			],
+			"somme_surface" : 568094,
+			"indice_qualite_air" : 3.841889117043121
+		},
+		{
+			"_id" : "Angers",
+			"nom" : [
+				"Basses-Brosses et Chevalleries",
+				"Coteaux du Pont-Barré",
+				"Marais de Cré-sur-Loir/La Flèche",
+				"Étang et boisements de Joreau"
+			],
+			"somme_surface" : 2667627,
+			"indice_qualite_air" : 3.9274469541409993
+		},
+		{
+			"_id" : "Roche-sur-Yon",
+			"nom" : [
+				"Marais communal du Poiré-sur-Velluire",
+				"Ferme de Choisy",
+				"Marais de la Vacherie"
+			],
+			"somme_surface" : 4873720,
+			"indice_qualite_air" : 3.891145595618439
+		},
+		{
+			"_id" : "Nantes",
+			"nom" : [
+				"Lac de Grand-Lieu",
+				"Tourbière de Logné",
+				"Ferme bocagère de la Chauffetière",
+				"Bocage humide des Cailleries"
+			],
+			"somme_surface" : 7407544,
+			"indice_qualite_air" : 3.874287018024184
+		},
+		{
+			"_id" : "Saint-Nazaire",
+			"nom" : [
+				"Etang du Pont de Fer",
+				"Polder de Sébastopol",
+				"Espace dunaire de la Pointe Saint-Gildas",
+				"Marais de Brière"
+			],
+			"somme_surface" : 10516957,
+			"indice_qualite_air" : 3.953912845083276
+		}
+]

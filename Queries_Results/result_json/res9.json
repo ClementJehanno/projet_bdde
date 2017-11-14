@@ -1,0 +1,1276 @@
+[
+		{
+			"_id" : {
+				"Annee" : 2004,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : null,
+			"moyenne_sous_indice_ozone" : null,
+			"moyenne_sous_indice_particules_fine" : null,
+			"moyenne_sous_indice_azote" : null,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 9612
+		},
+		{
+			"_id" : {
+				"Annee" : 2004,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : null,
+			"moyenne_sous_indice_ozone" : null,
+			"moyenne_sous_indice_particules_fine" : null,
+			"moyenne_sous_indice_azote" : null,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 1810
+		},
+		{
+			"_id" : {
+				"Annee" : 2004,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : null,
+			"moyenne_sous_indice_ozone" : null,
+			"moyenne_sous_indice_particules_fine" : null,
+			"moyenne_sous_indice_azote" : null,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 2793
+		},
+		{
+			"_id" : {
+				"Annee" : 2004,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : null,
+			"moyenne_sous_indice_ozone" : null,
+			"moyenne_sous_indice_particules_fine" : null,
+			"moyenne_sous_indice_azote" : null,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 11145
+		},
+		{
+			"_id" : {
+				"Annee" : 2004,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : null,
+			"moyenne_sous_indice_ozone" : null,
+			"moyenne_sous_indice_particules_fine" : null,
+			"moyenne_sous_indice_azote" : null,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 20732
+		},
+		{
+			"_id" : {
+				"Annee" : 2004,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : null,
+			"moyenne_sous_indice_ozone" : null,
+			"moyenne_sous_indice_particules_fine" : null,
+			"moyenne_sous_indice_azote" : null,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3913
+		},
+		{
+			"_id" : {
+				"Annee" : 2004,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : null,
+			"moyenne_sous_indice_ozone" : null,
+			"moyenne_sous_indice_particules_fine" : null,
+			"moyenne_sous_indice_azote" : null,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 5797
+		},
+		{
+			"_id" : {
+				"Annee" : 2005,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 3.7150684931506848,
+			"moyenne_sous_indice_ozone" : 3.6,
+			"moyenne_sous_indice_particules_fine" : 2.197260273972603,
+			"moyenne_sous_indice_azote" : 1.9123287671232876,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 11617
+		},
+		{
+			"_id" : {
+				"Annee" : 2005,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 3.6684931506849314,
+			"moyenne_sous_indice_ozone" : 3.6143250688705235,
+			"moyenne_sous_indice_particules_fine" : 2.0253521126760563,
+			"moyenne_sous_indice_azote" : 1.7362637362637363,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 2300
+		},
+		{
+			"_id" : {
+				"Annee" : 2005,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.526027397260274,
+			"moyenne_sous_indice_ozone" : 3.409340659340659,
+			"moyenne_sous_indice_particules_fine" : 2.136094674556213,
+			"moyenne_sous_indice_azote" : 1.8975069252077563,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3598
+		},
+		{
+			"_id" : {
+				"Annee" : 2005,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.627397260273973,
+			"moyenne_sous_indice_ozone" : 3.5123287671232877,
+			"moyenne_sous_indice_particules_fine" : 2.0145772594752187,
+			"moyenne_sous_indice_azote" : 1.989041095890411,
+			"moyenne_sous_indice_particules_souffre" : 1.0027397260273974,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 14261
+		},
+		{
+			"_id" : {
+				"Annee" : 2005,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.6684931506849314,
+			"moyenne_sous_indice_ozone" : 3.536986301369863,
+			"moyenne_sous_indice_particules_fine" : 2.202739726027397,
+			"moyenne_sous_indice_azote" : 2.1342465753424658,
+			"moyenne_sous_indice_particules_souffre" : 1.0027397260273974,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 25203
+		},
+		{
+			"_id" : {
+				"Annee" : 2005,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 3.736986301369863,
+			"moyenne_sous_indice_ozone" : 3.6648351648351647,
+			"moyenne_sous_indice_particules_fine" : 2.302941176470588,
+			"moyenne_sous_indice_azote" : 1.7142857142857142,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3775
+		},
+		{
+			"_id" : {
+				"Annee" : 2005,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 3.736986301369863,
+			"moyenne_sous_indice_ozone" : 3.654794520547945,
+			"moyenne_sous_indice_particules_fine" : 2.2436974789915967,
+			"moyenne_sous_indice_azote" : 1.660220994475138,
+			"moyenne_sous_indice_particules_souffre" : 1.0964187327823691,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 6374
+		},
+		{
+			"_id" : {
+				"Annee" : 2006,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 3.789041095890411,
+			"moyenne_sous_indice_ozone" : 3.6027397260273974,
+			"moyenne_sous_indice_particules_fine" : 2.162087912087912,
+			"moyenne_sous_indice_azote" : 1.915068493150685,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 10399
+		},
+		{
+			"_id" : {
+				"Annee" : 2006,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 3.6986301369863015,
+			"moyenne_sous_indice_ozone" : 3.576923076923077,
+			"moyenne_sous_indice_particules_fine" : 2.1610169491525424,
+			"moyenne_sous_indice_azote" : 1.743801652892562,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 2065
+		},
+		{
+			"_id" : {
+				"Annee" : 2006,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.654794520547945,
+			"moyenne_sous_indice_ozone" : 3.4356164383561643,
+			"moyenne_sous_indice_particules_fine" : 2.114206128133705,
+			"moyenne_sous_indice_azote" : 1.9232876712328768,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3233
+		},
+		{
+			"_id" : {
+				"Annee" : 2006,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.7013698630136984,
+			"moyenne_sous_indice_ozone" : 3.5342465753424657,
+			"moyenne_sous_indice_particules_fine" : 2.2222222222222223,
+			"moyenne_sous_indice_azote" : 1.9726027397260273,
+			"moyenne_sous_indice_particules_souffre" : 1.046831955922865,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 11268
+		},
+		{
+			"_id" : {
+				"Annee" : 2006,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.712328767123288,
+			"moyenne_sous_indice_ozone" : 3.4712328767123286,
+			"moyenne_sous_indice_particules_fine" : 2.128767123287671,
+			"moyenne_sous_indice_azote" : 2.0876712328767124,
+			"moyenne_sous_indice_particules_souffre" : 1.0136986301369864,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 24099
+		},
+		{
+			"_id" : {
+				"Annee" : 2006,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 3.7205479452054795,
+			"moyenne_sous_indice_ozone" : 3.5506849315068494,
+			"moyenne_sous_indice_particules_fine" : 2.3873873873873874,
+			"moyenne_sous_indice_azote" : 1.7287671232876711,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3832
+		},
+		{
+			"_id" : {
+				"Annee" : 2006,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 3.73972602739726,
+			"moyenne_sous_indice_ozone" : 3.5863013698630137,
+			"moyenne_sous_indice_particules_fine" : 2.261111111111111,
+			"moyenne_sous_indice_azote" : 1.6236263736263736,
+			"moyenne_sous_indice_particules_souffre" : 1.098901098901099,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 6267
+		},
+		{
+			"_id" : {
+				"Annee" : 2007,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 3.8383561643835615,
+			"moyenne_sous_indice_ozone" : 3.43013698630137,
+			"moyenne_sous_indice_particules_fine" : 2.6054794520547944,
+			"moyenne_sous_indice_azote" : 2.0054794520547947,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 11511
+		},
+		{
+			"_id" : {
+				"Annee" : 2007,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 3.7753424657534245,
+			"moyenne_sous_indice_ozone" : 3.3863013698630136,
+			"moyenne_sous_indice_particules_fine" : 2.6666666666666665,
+			"moyenne_sous_indice_azote" : 1.7857142857142858,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 2172
+		},
+		{
+			"_id" : {
+				"Annee" : 2007,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.684931506849315,
+			"moyenne_sous_indice_ozone" : 3.206703910614525,
+			"moyenne_sous_indice_particules_fine" : 2.6398891966759,
+			"moyenne_sous_indice_azote" : 1.9671232876712328,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3130
+		},
+		{
+			"_id" : {
+				"Annee" : 2007,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.8,
+			"moyenne_sous_indice_ozone" : 3.3589041095890413,
+			"moyenne_sous_indice_particules_fine" : 2.6263736263736264,
+			"moyenne_sous_indice_azote" : 1.9315068493150684,
+			"moyenne_sous_indice_particules_souffre" : 1.010958904109589,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 12724
+		},
+		{
+			"_id" : {
+				"Annee" : 2007,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.717808219178082,
+			"moyenne_sous_indice_ozone" : 3.3068493150684932,
+			"moyenne_sous_indice_particules_fine" : 2.728767123287671,
+			"moyenne_sous_indice_azote" : 2.010958904109589,
+			"moyenne_sous_indice_particules_souffre" : 1.0027397260273974,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 25341
+		},
+		{
+			"_id" : {
+				"Annee" : 2007,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 3.750684931506849,
+			"moyenne_sous_indice_ozone" : 3.389041095890411,
+			"moyenne_sous_indice_particules_fine" : 2.719887955182073,
+			"moyenne_sous_indice_azote" : 1.7878787878787878,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3684
+		},
+		{
+			"_id" : {
+				"Annee" : 2007,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 3.8904109589041096,
+			"moyenne_sous_indice_ozone" : 3.578082191780822,
+			"moyenne_sous_indice_particules_fine" : 2.6758241758241756,
+			"moyenne_sous_indice_azote" : 1.610958904109589,
+			"moyenne_sous_indice_particules_souffre" : 1.0410958904109588,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 6515
+		},
+		{
+			"_id" : {
+				"Annee" : 2008,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 3.800546448087432,
+			"moyenne_sous_indice_ozone" : 3.5327868852459017,
+			"moyenne_sous_indice_particules_fine" : 2.3934426229508197,
+			"moyenne_sous_indice_azote" : 1.9672131147540983,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 11941
+		},
+		{
+			"_id" : {
+				"Annee" : 2008,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 3.6475409836065573,
+			"moyenne_sous_indice_ozone" : 3.412087912087912,
+			"moyenne_sous_indice_particules_fine" : 2.2548476454293627,
+			"moyenne_sous_indice_azote" : 1.7595628415300546,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 2249
+		},
+		{
+			"_id" : {
+				"Annee" : 2008,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.639344262295082,
+			"moyenne_sous_indice_ozone" : 3.3278688524590163,
+			"moyenne_sous_indice_particules_fine" : 2.3370165745856353,
+			"moyenne_sous_indice_azote" : 1.8688524590163935,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3038
+		},
+		{
+			"_id" : {
+				"Annee" : 2008,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.6885245901639343,
+			"moyenne_sous_indice_ozone" : 3.3551912568306013,
+			"moyenne_sous_indice_particules_fine" : 2.368131868131868,
+			"moyenne_sous_indice_azote" : 2.0382513661202184,
+			"moyenne_sous_indice_particules_souffre" : 1.0142045454545454,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 12874
+		},
+		{
+			"_id" : {
+				"Annee" : 2008,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.6530054644808745,
+			"moyenne_sous_indice_ozone" : 3.3633879781420766,
+			"moyenne_sous_indice_particules_fine" : 2.459016393442623,
+			"moyenne_sous_indice_azote" : 1.989071038251366,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 25659
+		},
+		{
+			"_id" : {
+				"Annee" : 2008,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 3.669398907103825,
+			"moyenne_sous_indice_ozone" : 3.459016393442623,
+			"moyenne_sous_indice_particules_fine" : 2.3422619047619047,
+			"moyenne_sous_indice_azote" : 1.6475409836065573,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3046
+		},
+		{
+			"_id" : {
+				"Annee" : 2008,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 3.7759562841530054,
+			"moyenne_sous_indice_ozone" : 3.587431693989071,
+			"moyenne_sous_indice_particules_fine" : 2.4148351648351647,
+			"moyenne_sous_indice_azote" : 1.5628415300546448,
+			"moyenne_sous_indice_particules_souffre" : 1.0245901639344261,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 6442
+		},
+		{
+			"_id" : {
+				"Annee" : 2009,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 3.8876712328767122,
+			"moyenne_sous_indice_ozone" : 3.5671232876712327,
+			"moyenne_sous_indice_particules_fine" : 2.712290502793296,
+			"moyenne_sous_indice_azote" : 1.917808219178082,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2009,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 3.8438356164383563,
+			"moyenne_sous_indice_ozone" : 3.4794520547945207,
+			"moyenne_sous_indice_particules_fine" : 2.888888888888889,
+			"moyenne_sous_indice_azote" : 1.7287671232876711,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 2626,
+			"somme_poids_lourd" : 132,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2009,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.591780821917808,
+			"moyenne_sous_indice_ozone" : 3.2246575342465755,
+			"moyenne_sous_indice_particules_fine" : 2.75,
+			"moyenne_sous_indice_azote" : 1.936986301369863,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2009,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.8109589041095893,
+			"moyenne_sous_indice_ozone" : 3.4767123287671233,
+			"moyenne_sous_indice_particules_fine" : 2.6551724137931036,
+			"moyenne_sous_indice_azote" : 1.895890410958904,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2009,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.7835616438356166,
+			"moyenne_sous_indice_ozone" : 3.4493150684931506,
+			"moyenne_sous_indice_particules_fine" : 2.6876712328767125,
+			"moyenne_sous_indice_azote" : 1.8465753424657534,
+			"moyenne_sous_indice_particules_souffre" : 0.9917808219178083,
+			"somme_voiture" : 734801,
+			"somme_poids_lourd" : 49170,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2009,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 3.852054794520548,
+			"moyenne_sous_indice_ozone" : 3.5205479452054793,
+			"moyenne_sous_indice_particules_fine" : 3.0357142857142856,
+			"moyenne_sous_indice_azote" : 1.6493150684931508,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 11386,
+			"somme_poids_lourd" : 1175,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2009,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 3.745205479452055,
+			"moyenne_sous_indice_ozone" : 3.4876712328767123,
+			"moyenne_sous_indice_particules_fine" : 2.7099447513812156,
+			"moyenne_sous_indice_azote" : 1.621917808219178,
+			"moyenne_sous_indice_particules_souffre" : 1.0438356164383562,
+			"somme_voiture" : 398907,
+			"somme_poids_lourd" : 23404,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2010,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 3.9945205479452053,
+			"moyenne_sous_indice_ozone" : 3.695890410958904,
+			"moyenne_sous_indice_particules_fine" : 2.7845303867403315,
+			"moyenne_sous_indice_azote" : 2.03013698630137,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 13179
+		},
+		{
+			"_id" : {
+				"Annee" : 2010,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 3.915068493150685,
+			"moyenne_sous_indice_ozone" : 3.632596685082873,
+			"moyenne_sous_indice_particules_fine" : 2.6545961002785514,
+			"moyenne_sous_indice_azote" : 1.7726027397260273,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 14208,
+			"somme_poids_lourd" : 1094,
+			"somme_montee_descente" : 2318
+		},
+		{
+			"_id" : {
+				"Annee" : 2010,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.76986301369863,
+			"moyenne_sous_indice_ozone" : 3.367123287671233,
+			"moyenne_sous_indice_particules_fine" : 3.0083798882681565,
+			"moyenne_sous_indice_azote" : 2.0165289256198347,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3530
+		},
+		{
+			"_id" : {
+				"Annee" : 2010,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.8876712328767122,
+			"moyenne_sous_indice_ozone" : 3.5534246575342467,
+			"moyenne_sous_indice_particules_fine" : 2.736986301369863,
+			"moyenne_sous_indice_azote" : 1.989041095890411,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 14721
+		},
+		{
+			"_id" : {
+				"Annee" : 2010,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.852054794520548,
+			"moyenne_sous_indice_ozone" : 3.5561643835616437,
+			"moyenne_sous_indice_particules_fine" : 2.789041095890411,
+			"moyenne_sous_indice_azote" : 1.9479452054794522,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 1240317,
+			"somme_poids_lourd" : 81916,
+			"somme_montee_descente" : 27368
+		},
+		{
+			"_id" : {
+				"Annee" : 2010,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 3.915068493150685,
+			"moyenne_sous_indice_ozone" : 3.5397260273972604,
+			"moyenne_sous_indice_particules_fine" : 3.1988950276243093,
+			"moyenne_sous_indice_azote" : 1.7205479452054795,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 20307,
+			"somme_poids_lourd" : 2016,
+			"somme_montee_descente" : 4508
+		},
+		{
+			"_id" : {
+				"Annee" : 2010,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 3.8438356164383563,
+			"moyenne_sous_indice_ozone" : 3.5561643835616437,
+			"moyenne_sous_indice_particules_fine" : 3.1440677966101696,
+			"moyenne_sous_indice_azote" : 1.7232876712328766,
+			"moyenne_sous_indice_particules_souffre" : 1.021917808219178,
+			"somme_voiture" : 672560,
+			"somme_poids_lourd" : 38147,
+			"somme_montee_descente" : 6896
+		},
+		{
+			"_id" : {
+				"Annee" : 2011,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 3.9205479452054797,
+			"moyenne_sous_indice_ozone" : 3.6684931506849314,
+			"moyenne_sous_indice_particules_fine" : 2.7994505494505493,
+			"moyenne_sous_indice_azote" : 1.8602739726027397,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2011,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 3.8273972602739725,
+			"moyenne_sous_indice_ozone" : 3.643835616438356,
+			"moyenne_sous_indice_particules_fine" : 2.47536231884058,
+			"moyenne_sous_indice_azote" : 1.726027397260274,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2011,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.7260273972602738,
+			"moyenne_sous_indice_ozone" : 3.3945205479452056,
+			"moyenne_sous_indice_particules_fine" : 2.7099447513812156,
+			"moyenne_sous_indice_azote" : 1.8523676880222841,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2011,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.884931506849315,
+			"moyenne_sous_indice_ozone" : 3.6164383561643834,
+			"moyenne_sous_indice_particules_fine" : 2.541436464088398,
+			"moyenne_sous_indice_azote" : 1.926027397260274,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2011,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.936986301369863,
+			"moyenne_sous_indice_ozone" : 3.7013698630136984,
+			"moyenne_sous_indice_particules_fine" : 2.652054794520548,
+			"moyenne_sous_indice_azote" : 1.8465753424657534,
+			"moyenne_sous_indice_particules_souffre" : 0.010958904109589041,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2011,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 3.8575342465753426,
+			"moyenne_sous_indice_ozone" : 3.6164383561643834,
+			"moyenne_sous_indice_particules_fine" : 2.820809248554913,
+			"moyenne_sous_indice_azote" : 1.6,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2011,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 4.024657534246575,
+			"moyenne_sous_indice_ozone" : 3.8,
+			"moyenne_sous_indice_particules_fine" : 2.879154078549849,
+			"moyenne_sous_indice_azote" : 1.515068493150685,
+			"moyenne_sous_indice_particules_souffre" : 1.0191780821917809,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2012,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 4.1256830601092895,
+			"moyenne_sous_indice_ozone" : 3.439890710382514,
+			"moyenne_sous_indice_particules_fine" : 3.5294117647058822,
+			"moyenne_sous_indice_azote" : 1.7814207650273224,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2012,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 4.166666666666667,
+			"moyenne_sous_indice_ozone" : 3.6418732782369148,
+			"moyenne_sous_indice_particules_fine" : 3.2580645161290325,
+			"moyenne_sous_indice_azote" : 1.677685950413223,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2012,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 4.016393442622951,
+			"moyenne_sous_indice_ozone" : 3.349726775956284,
+			"moyenne_sous_indice_particules_fine" : 3.330601092896175,
+			"moyenne_sous_indice_azote" : 1.669398907103825,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2012,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 4.060109289617486,
+			"moyenne_sous_indice_ozone" : 3.3524590163934427,
+			"moyenne_sous_indice_particules_fine" : 3.4730878186968837,
+			"moyenne_sous_indice_azote" : 1.8060109289617485,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2012,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 4.2349726775956285,
+			"moyenne_sous_indice_ozone" : 3.540983606557377,
+			"moyenne_sous_indice_particules_fine" : 3.5546448087431695,
+			"moyenne_sous_indice_azote" : 1.9562841530054644,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2012,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 4.2349726775956285,
+			"moyenne_sous_indice_ozone" : 3.4628099173553717,
+			"moyenne_sous_indice_particules_fine" : 3.9101123595505616,
+			"moyenne_sous_indice_azote" : 1.6284153005464481,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2012,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 4.442622950819672,
+			"moyenne_sous_indice_ozone" : 3.685792349726776,
+			"moyenne_sous_indice_particules_fine" : 3.952247191011236,
+			"moyenne_sous_indice_azote" : 1.4781420765027322,
+			"moyenne_sous_indice_particules_souffre" : 1.0223463687150838,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2013,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 4.189041095890411,
+			"moyenne_sous_indice_ozone" : 3.6054794520547944,
+			"moyenne_sous_indice_particules_fine" : 3.318681318681319,
+			"moyenne_sous_indice_azote" : 1.726027397260274,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 15065
+		},
+		{
+			"_id" : {
+				"Annee" : 2013,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 4.380821917808219,
+			"moyenne_sous_indice_ozone" : 3.793956043956044,
+			"moyenne_sous_indice_particules_fine" : 3.4161849710982657,
+			"moyenne_sous_indice_azote" : 1.5698630136986302,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 2506
+		},
+		{
+			"_id" : {
+				"Annee" : 2013,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 4.038356164383561,
+			"moyenne_sous_indice_ozone" : 3.389041095890411,
+			"moyenne_sous_indice_particules_fine" : 3.25,
+			"moyenne_sous_indice_azote" : 1.7671232876712328,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 4538
+		},
+		{
+			"_id" : {
+				"Annee" : 2013,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 4.090410958904109,
+			"moyenne_sous_indice_ozone" : 3.5095890410958903,
+			"moyenne_sous_indice_particules_fine" : 3.209366391184573,
+			"moyenne_sous_indice_azote" : 1.7205479452054795,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 15961
+		},
+		{
+			"_id" : {
+				"Annee" : 2013,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 4.178082191780822,
+			"moyenne_sous_indice_ozone" : 3.6301369863013697,
+			"moyenne_sous_indice_particules_fine" : 3.3013698630136985,
+			"moyenne_sous_indice_azote" : 1.8164383561643835,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 34048
+		},
+		{
+			"_id" : {
+				"Annee" : 2013,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 4.063013698630137,
+			"moyenne_sous_indice_ozone" : 3.5753424657534247,
+			"moyenne_sous_indice_particules_fine" : 3.2333333333333334,
+			"moyenne_sous_indice_azote" : 1.558904109589041,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 4992
+		},
+		{
+			"_id" : {
+				"Annee" : 2013,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 4.304109589041096,
+			"moyenne_sous_indice_ozone" : 3.789041095890411,
+			"moyenne_sous_indice_particules_fine" : 3.369186046511628,
+			"moyenne_sous_indice_azote" : 1.4054794520547946,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 7894
+		},
+		{
+			"_id" : {
+				"Annee" : 2014,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 4.032876712328767,
+			"moyenne_sous_indice_ozone" : 3.652054794520548,
+			"moyenne_sous_indice_particules_fine" : 3.1342465753424658,
+			"moyenne_sous_indice_azote" : 1.641095890410959,
+			"moyenne_sous_indice_particules_souffre" : null,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2014,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 4.005479452054795,
+			"moyenne_sous_indice_ozone" : 3.682191780821918,
+			"moyenne_sous_indice_particules_fine" : 3.186301369863014,
+			"moyenne_sous_indice_azote" : 1.5123287671232877,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2014,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.7643835616438355,
+			"moyenne_sous_indice_ozone" : 3.452054794520548,
+			"moyenne_sous_indice_particules_fine" : 2.4575342465753423,
+			"moyenne_sous_indice_azote" : 1.6465753424657534,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2014,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.915068493150685,
+			"moyenne_sous_indice_ozone" : 3.5863013698630137,
+			"moyenne_sous_indice_particules_fine" : 2.8958904109589043,
+			"moyenne_sous_indice_azote" : 1.5506849315068494,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2014,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.9972602739726026,
+			"moyenne_sous_indice_ozone" : 3.6465753424657534,
+			"moyenne_sous_indice_particules_fine" : 3.043835616438356,
+			"moyenne_sous_indice_azote" : 1.8602739726027397,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2014,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 4.0576923076923075,
+			"moyenne_sous_indice_ozone" : 3.64010989010989,
+			"moyenne_sous_indice_particules_fine" : 3.368131868131868,
+			"moyenne_sous_indice_azote" : 1.5027472527472527,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2014,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 4.0849315068493155,
+			"moyenne_sous_indice_ozone" : 3.819178082191781,
+			"moyenne_sous_indice_particules_fine" : 2.9123287671232876,
+			"moyenne_sous_indice_azote" : 1.3835616438356164,
+			"moyenne_sous_indice_particules_souffre" : 1.0082191780821919,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 0
+		},
+		{
+			"_id" : {
+				"Annee" : 2015,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 4,
+			"moyenne_sous_indice_ozone" : 3.5945205479452054,
+			"moyenne_sous_indice_particules_fine" : 2.9972602739726026,
+			"moyenne_sous_indice_azote" : 1.641095890410959,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 14936
+		},
+		{
+			"_id" : {
+				"Annee" : 2015,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 3.9808219178082194,
+			"moyenne_sous_indice_ozone" : 3.6246575342465754,
+			"moyenne_sous_indice_particules_fine" : 2.8602739726027395,
+			"moyenne_sous_indice_azote" : 1.5068493150684932,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 2531
+		},
+		{
+			"_id" : {
+				"Annee" : 2015,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.7753424657534245,
+			"moyenne_sous_indice_ozone" : 3.345205479452055,
+			"moyenne_sous_indice_particules_fine" : 2.808219178082192,
+			"moyenne_sous_indice_azote" : 1.7452054794520548,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3635
+		},
+		{
+			"_id" : {
+				"Annee" : 2015,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.8684931506849316,
+			"moyenne_sous_indice_ozone" : 3.5095890410958903,
+			"moyenne_sous_indice_particules_fine" : 3,
+			"moyenne_sous_indice_azote" : 1.6246575342465754,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 15156
+		},
+		{
+			"_id" : {
+				"Annee" : 2015,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.967123287671233,
+			"moyenne_sous_indice_ozone" : 3.5506849315068494,
+			"moyenne_sous_indice_particules_fine" : 3.0986301369863014,
+			"moyenne_sous_indice_azote" : 1.7287671232876711,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 39686
+		},
+		{
+			"_id" : {
+				"Annee" : 2015,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 3.9972602739726026,
+			"moyenne_sous_indice_ozone" : 3.372602739726027,
+			"moyenne_sous_indice_particules_fine" : 3.4,
+			"moyenne_sous_indice_azote" : 1.473972602739726,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 5324
+		},
+		{
+			"_id" : {
+				"Annee" : 2015,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 3.9808219178082194,
+			"moyenne_sous_indice_ozone" : 3.706849315068493,
+			"moyenne_sous_indice_particules_fine" : 2.271232876712329,
+			"moyenne_sous_indice_azote" : 1.3342465753424657,
+			"moyenne_sous_indice_particules_souffre" : 1.0027397260273974,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 8837
+		},
+		{
+			"_id" : {
+				"Annee" : 2016,
+				"Region" : "Angers"
+			},
+			"moyenne_qualite_air" : 3.8360655737704916,
+			"moyenne_sous_indice_ozone" : 3.314207650273224,
+			"moyenne_sous_indice_particules_fine" : 2.751366120218579,
+			"moyenne_sous_indice_azote" : 1.592896174863388,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 14900
+		},
+		{
+			"_id" : {
+				"Annee" : 2016,
+				"Region" : "Cholet"
+			},
+			"moyenne_qualite_air" : 3.9098360655737703,
+			"moyenne_sous_indice_ozone" : 3.4344262295081966,
+			"moyenne_sous_indice_particules_fine" : 2.989071038251366,
+			"moyenne_sous_indice_azote" : 1.4480874316939891,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 2364
+		},
+		{
+			"_id" : {
+				"Annee" : 2016,
+				"Region" : "Laval"
+			},
+			"moyenne_qualite_air" : 3.66120218579235,
+			"moyenne_sous_indice_ozone" : 3.1530054644808745,
+			"moyenne_sous_indice_particules_fine" : 2.7540983606557377,
+			"moyenne_sous_indice_azote" : 1.6912568306010929,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 3181
+		},
+		{
+			"_id" : {
+				"Annee" : 2016,
+				"Region" : "Mans"
+			},
+			"moyenne_qualite_air" : 3.76775956284153,
+			"moyenne_sous_indice_ozone" : 3.3278688524590163,
+			"moyenne_sous_indice_particules_fine" : 2.73224043715847,
+			"moyenne_sous_indice_azote" : 1.5737704918032787,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 86222
+		},
+		{
+			"_id" : {
+				"Annee" : 2016,
+				"Region" : "Nantes"
+			},
+			"moyenne_qualite_air" : 3.789617486338798,
+			"moyenne_sous_indice_ozone" : 3.3114754098360657,
+			"moyenne_sous_indice_particules_fine" : 2.8852459016393444,
+			"moyenne_sous_indice_azote" : 1.7404371584699454,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 46075
+		},
+		{
+			"_id" : {
+				"Annee" : 2016,
+				"Region" : "Roche-sur-Yon"
+			},
+			"moyenne_qualite_air" : 3.83879781420765,
+			"moyenne_sous_indice_ozone" : 3.431693989071038,
+			"moyenne_sous_indice_particules_fine" : 2.797814207650273,
+			"moyenne_sous_indice_azote" : 1.4863387978142077,
+			"moyenne_sous_indice_particules_souffre" : 0,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 5586
+		},
+		{
+			"_id" : {
+				"Annee" : 2016,
+				"Region" : "Saint-Nazaire"
+			},
+			"moyenne_qualite_air" : 3.877049180327869,
+			"moyenne_sous_indice_ozone" : 3.4644808743169397,
+			"moyenne_sous_indice_particules_fine" : 2.6775956284153004,
+			"moyenne_sous_indice_azote" : 1.4371584699453552,
+			"moyenne_sous_indice_particules_souffre" : 1,
+			"somme_voiture" : 0,
+			"somme_poids_lourd" : 0,
+			"somme_montee_descente" : 7878
+		}
+]

@@ -1,0 +1,58 @@
+[
+	{
+		"Annee" : 2007,
+		"countNom_station_mesure" : 31
+	},
+	{
+		"Annee" : 2008,
+		"countNom_station_mesure" : 32
+	},
+	{
+		"Annee" : 2010,
+		"countNom_station_mesure" : 29
+	},
+	{
+		"Annee" : 2013,
+		"countNom_station_mesure" : 25
+	},
+	{
+		"Annee" : 2015,
+		"countNom_station_mesure" : 24
+	},
+	{
+		"Annee" : 2004,
+		"countNom_station_mesure" : 0
+	},
+	{
+		"Annee" : 2005,
+		"countNom_station_mesure" : 34
+	},
+	{
+		"Annee" : 2006,
+		"countNom_station_mesure" : 31
+	},
+	{
+		"Annee" : 2016,
+		"countNom_station_mesure" : 24
+	},
+	{
+		"Annee" : 2014,
+		"countNom_station_mesure" : 21
+	},
+	{
+		"Annee" : 2012,
+		"countNom_station_mesure" : 24
+	},
+	{
+		"Annee" : 2011,
+		"countNom_station_mesure" : 25
+	},
+	{
+		"Annee" : 2009,
+		"countNom_station_mesure" : 31
+	},
+	{
+		"Annee" : null,
+		"countNom_station_mesure" : 0
+	}
+]
