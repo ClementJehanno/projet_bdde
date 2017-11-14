@@ -121,7 +121,7 @@ On peut aussi rajouter un match sur les années si on veut. Puisque pour les tra
 
 On récupère l'évolution de nombre de dépôts par année et on les compte pour chaque année
 
-db.final.group({
+db.test_final.group({
     "key": {
         "Annee": true
     },
