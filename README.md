@@ -120,15 +120,17 @@ Dans cette section nous allons revenir sur certaines d'entre elle afin de les ex
 
 Cette requête est la Query 1 dans le fichier queries_FINAL.txt.
 
-> db.test_format.aggregate([{$group:{_id:"$VILLE",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
+    db.test_format.aggregate([{$group:{_id:"$VILLE",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
 
 La première partie
-> db.test_format.aggregate([{$group:{_id:"$VILLE", ........... }}}}]) <br/>
+
+    db.test_format.aggregate([{$group:{_id:"$VILLE", ........... }}}}]) <br/>
 
 
 regroupe par VILLE, il se base sur la clé VILLE pour faire son group by. Dans mongoDB cela se traduit par le champ _id: c'est lui donner la clé.<br/>
 La deuxième partie
-> db.test_format.aggregate([{$group:{......, indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
+
+    db.test_format.aggregate([{$group:{......, indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
 
 
 Ici on fait la moyenne des indices de qualite de l'air. On pourrait rajouter d'autres champs (par exemple concernant le dioxyde d'azote ou encore le dioxyde de souffre)
@@ -150,7 +152,7 @@ Pour ça nous avons fait quelques représentations visuelles des résultats de n
 
 Voici la requête numéro 4 :
 
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Mont_desc_gares"},  pollution_moyenne:{$avg:"$Ind_qual_air"}}}])
+    db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Mont_desc_gares"},  pollution_moyenne:{$avg:"$Ind_qual_air"}}}])
 
 Elle regroupe par ville, la moyenne de montées et descente en gare avec la moyenne de la pollution.
 
@@ -168,7 +170,7 @@ On va utiliser nos données routières.
 Le seul souci avec ces données c'est que nous n'avons que les années 2009 et 2010. 
 Ici nous allons prendre l'exemple de l'année 2009.
 
-db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF",  pollution_moyenne:{$avg:"$Ind_qual_air"},  somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"}}}])
+    db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF",  pollution_moyenne:{$avg:"$Ind_qual_air"},  somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"}}}])
 
 La requête "match" sur toutes les valeurs dont le champ année vaut 2009 puis nous groupons par commune et ajoutons les champs nécessaires à nos moyennes.
 
@@ -202,7 +204,7 @@ Cette requête est la requête numéro 9 :
 
 Elle regroupe par année et commune les indices de pollution par ville, elle nous permet de tracer des requêtes spécifiques sur chaque ville avec un détail à l'année contrairement aux précédentes qui étaient sur la totalité de la période.
 
-db.test_final.aggregate([{$group:{_id:{Annee:"$Annee", Region:"$COMMUNE_REF"}, moyenne_qualite_air:{$avg:"$Ind_qual_air"}, moyenne_sous_indice_ozone:{$avg:"$Sous_ind_ozone"}, moyenne_sous_indice_particules_fine:{$avg:"$Sous_ind_particules_fines"}, moyenne_sous_indice_azote:{$avg:"$Sous_ind_part_azote"}, moyenne_sous_indice_particules_souffre:{$avg:"$Sous_ind_part_souffre"}, somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"},somme_montee_descente:{$sum:"$Mont_desc_gares"} }}, {$sort:{"_id":-1}} ])
+    db.test_final.aggregate([{$group:{_id:{Annee:"$Annee", Region:"$COMMUNE_REF"}, moyenne_qualite_air:{$avg:"$Ind_qual_air"}, moyenne_sous_indice_ozone:{$avg:"$Sous_ind_ozone"}, moyenne_sous_indice_particules_fine:{$avg:"$Sous_ind_particules_fines"}, moyenne_sous_indice_azote:{$avg:"$Sous_ind_part_azote"}, moyenne_sous_indice_particules_souffre:{$avg:"$Sous_ind_part_souffre"}, somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"},somme_montee_descente:{$sum:"$Mont_desc_gares"} }}, {$sort:{"_id":-1}} ])
 
 Elle regroupe donc par année et par ville proche les indices respectifs de pollution. 
 Nous avons tracé deux graphiques : l'un pour Nantes et l'autre pour le Mans de l'indice global :
@@ -216,6 +218,23 @@ Nous avons tracé deux graphiques : l'un pour Nantes et l'autre pour le Mans de 
 
 Cette requête est la requête numéro 10 :
 
-Pour cette requête nous avons utilisés un map reduce 
+Elle nous permet de compter l'évolution du nombre de stations par année.
+Pour cette requête nous avons utilisés un map reduce, en effet il nous était impossible de grouper par année et de faire un count en même temps, nous avons eu le même souci sur la requête 7 (cf le fichier queries_FINAL.txt) que nous avons du séparer en quatre.
+Nous avons compris trop tard l'intérêt du map réduce mais qui ici est primordial car il nous permet à la fois de grouper par année en mettant l'année comme clé, et de faire la réducttion sur les stations tout en les comptant.
+
+
+    db.final.group({
+    "key": {
+       "Annee": true
+     },
+     "initial": {
+       "countNom_station_mesure": 0
+     },
+     "reduce": function(obj, prev) {
+        if (obj.Nom_station_mesure != null) if (obj.Nom_station_mesure instanceof Array) prev.countNom_station_mesure += obj.Nom_station_mesure.length;
+        else prev.countNom_station_mesure++;
+       }
+     })
+
 
 ![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graphe_10.png)
