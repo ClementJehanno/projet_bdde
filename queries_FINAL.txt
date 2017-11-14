@@ -94,9 +94,6 @@ Pour avoir l'écart type des villes :
 
 db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", min:{$min:"$Ind_qual_air"}, max:{$max:"$Ind_qual_air"} }}])
 
-
-
-
 ------ Query 8 :
 
 Récupérer les résèrves naturelles les plus proches des villes et voir sur ces résèrves et sur ces villes, lequelles ont l'indice de pollution le plus bas et voir si les résèrves naturelles sont proches ou pas
