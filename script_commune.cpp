@@ -24,8 +24,6 @@ int main(int argc, char* argv[])
     ifstream fichier(file_path.c_str(), ios::in);  // on ouvre en lecture
     std::vector<std::array<string,4> > donnees;
 
-    string finalContent = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><kml xmlns=\"http://www.opengis.net/kml/2.2\"><Document>";
-
     // RECUP DES COMMUNES DANS DONNEES
     if(fichier)
     {
@@ -34,7 +32,6 @@ int main(int argc, char* argv[])
         int nObj = 0;
 
         string nom, code, longitude, latitude;
-        string coord;
 
         //On rempli les donnes des communes
         while(getline(fichier, contenu)){
@@ -88,9 +85,6 @@ int main(int argc, char* argv[])
                     }
                 }
                 if(contenu.find("}") != string::npos){
-                    //cout << nom << " " << longitude << " " << latitude << endl;
-                    coord = "<Name>"+code+"</Name><Placemark><Point><coordinates>"+longitude+","+latitude+"</coordinates></Point></Placemark>\n";
-                    finalContent+=coord;
                     donnees.push_back({nom,code,longitude,latitude});
                     nom = code = longitude = latitude = "";
                 }
@@ -109,7 +103,7 @@ int main(int argc, char* argv[])
         bool isAttr = false;
         string longitude ="";
         string latitude="";
-        std::ofstream os("final.json");
+        std::ofstream os("final.json");// Creation du fichier en écriture
 
         //On rempli les donnes des communes
         while(getline(fichierL, contenu)){
@@ -145,7 +139,7 @@ int main(int argc, char* argv[])
                     float longi = strtof(longitude.c_str(),0);
                     float lati = strtof(latitude.c_str(),0);
                     float dist = sqrt((longiC-longi)*(longiC-longi) + (latiC-lati)*(latiC-lati));
-                    //cout << dist << endl;
+
                     if(dist < minDist){
                         minDist = dist;
                         minI = i;

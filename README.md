@@ -16,7 +16,7 @@ M1-ALMA 2017-2018<br/>
   * [Agrégats](#agregats)
   * [Création des agrégats](#crea_agregats)
 * [Requêtes](#requetes)
-
+* [Présentation du sujet](#ccl)
 
 # <a name="pres"></a>Présentation du sujet
 
@@ -33,7 +33,7 @@ Notre idée pour la suite était d'essayer de faire des liens entre la qualité 
 Le choix de notre base de donnée s'est orientée vers une base NoSQL.
  * Pourquoi le NoSQL ? <br/>
 Le premier facteur qui nous a influencé est celui de la découverte. Nous avions déjà fait du Oracle l'année passée et après avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir comment était le langage et quelles étaient ses possibilités.
-Il y a 4 différentes types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*), il faut savoir quel type de données nous avons à traiter. 
+Il y a 4 différentes types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*), il faut savoir quel type de données nous avons à traiter.
  Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté au base de données NoSQL Le document qualité de l'air est structuré de la manière suivante :
 
 >   *{  <br/>
@@ -52,7 +52,7 @@ Il y a 4 différentes types de base de données NoSQL (*Key-Value*, *Document*, 
 
  Pour chaque ville nous avons certaines informations quand à sa position et surtout, les informations quand à la pollution.
  Ainsi le choix d'une base de données NoSQL orientée document semble légitime.
- 
+
  Cependant, nous verrons par la suite que ce n'est pas le seul document que nous traitons. Il sera donc nécessaire de travailler nos données pour refaire nos aggrégats.
 
    * MongoDB <br/>
@@ -78,7 +78,7 @@ Comme dit précedemment il etait nécessaire que nos données soient corrélées
 La première étape avant de regrouper les dataset était de normaliser certains de nos attributs. Nous avons normalisé les dates et les locations GPS pour pouvoir lier plus facilement nos données par la suite.
 Pour faire cela nous avons tout simplement utilisé des expressions régulières directement les dataset concernés. Ce n'est pas la méthode la plus optimale car si nous avions un volume de données très important, de simples éditeurs de texte n'auraient pas supporter les modifications. A ce sujet nous avons essayé Talend mais cela nous a pris beaucoup de temps pour peu de résultat. Nos données n'étant pas trop volumineuses, nous sommes restés sur l'option la plus simple, les expressions régulières.
 
-Par exemple : 
+Par exemple :
 
 Certaines données de location GPS étaient de la forme "l" : "[47.6664, -0.111147]". Nous les voulions ainsi : "LATITUDE" : 47.6664, "LONGITUDE" : -0.111147. Avec une regex comme celle-ci : "[[0-9]*.[0-9]*, -?[0-9]*.[0-9]*]", nous avons pu récupérer toutes les valeurs de longitude et latitude. Puis nous les avons mise dans un autre fichier, là nous avons séparé les données avec un Chercher/Remplacer et enfin nous les avons remise dans le dataset originel.
 
@@ -112,11 +112,11 @@ Exemple :
     	{}, |
     	{}, | données pollutions
     	... |
-      
+
     	{}, |
     	{}, | données réserves naturelles
     	... |
-      
+
     	{}, |
     	{}, | données traffic
     	... |
@@ -213,8 +213,8 @@ Nous allons essayer de trouver des données plus précises.
 
 Cette requête est la requête numéro 6 :
 
-On va utiliser nos données routières. 
-Le seul souci avec ces données c'est que nous n'avons que les années 2009 et 2010. 
+On va utiliser nos données routières.
+Le seul souci avec ces données c'est que nous n'avons que les années 2009 et 2010.
 Ici nous allons prendre l'exemple de l'année 2009.
 
     db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF",  pollution_moyenne:{$avg:"$Ind_qual_air"},  somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"}}}])
@@ -253,7 +253,7 @@ Elle regroupe par année et commune les indices de pollution par ville, elle nou
 
     db.test_final.aggregate([{$group:{_id:{Annee:"$Annee", Region:"$COMMUNE_REF"}, moyenne_qualite_air:{$avg:"$Ind_qual_air"}, moyenne_sous_indice_ozone:{$avg:"$Sous_ind_ozone"}, moyenne_sous_indice_particules_fine:{$avg:"$Sous_ind_particules_fines"}, moyenne_sous_indice_azote:{$avg:"$Sous_ind_part_azote"}, moyenne_sous_indice_particules_souffre:{$avg:"$Sous_ind_part_souffre"}, somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"},somme_montee_descente:{$sum:"$Mont_desc_gares"} }}, {$sort:{"_id":-1}} ])
 
-Elle regroupe donc par année et par ville proche les indices respectifs de pollution. 
+Elle regroupe donc par année et par ville proche les indices respectifs de pollution.
 Nous avons tracé deux graphiques : l'un pour Nantes et l'autre pour le Mans de l'indice global :
 
 ![Graphique résultat requête 9 le Mans](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graphe_9_Mans.png)
@@ -285,3 +285,11 @@ Nous avons compris trop tard l'intérêt du map réduce mais qui ici est primord
 
 
 ![Graphique résultat requête 10](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graphe_10.png)
+
+# <a name="ccl"></a>Conclusion
+
+Nous sommes parvenus à regrouper un grand nombre de donnée sur des domaines variés tels que la qualité de l'air, la présence de réserves naturelles et les statistiques sur les transports dans la région des Pays de la Loire. On constate cependant que peu d'attributs permettent de lier les données brutes entre elles. Nous sommes tout de même parvenus à arranger les données de façon à pourvoir les interpréter un peu plus finement. Les données ainsi récupérées ne nous permettent pas d'établir de corrélations directes mais certaines, après analyse, nous révèlent quelques faits cohérents.
+
+Pour observer de réelles  corrélations il aurait fallu que nos datasets aient un niveau granularité plus élevé et qu'ils nous renseignent sur une période de temps commune et relativement large. Des données supplémentaire tel que des données sur les activités industrielle par zone, par exemple, nous auraient sans doute aussi permis d'affiner nos observations.
+
+Globalement, même si les données ne sont ni suffisamment précises ni en quantité suffisante pour tirer de réelles conclusions, elles nous permettent de faire des observations intéressantes tels que celles illustrées sur les graphiques plus haut et qui sont tirés des résultats de quelques unes de nos requêtes.
