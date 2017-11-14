@@ -1,11 +1,11 @@
 # Projet base de données évoluées
 Ceci est le dépot github associé à notre projet de base de données.
 
-Jehanno Clément
-Caillaud Pierre
-Duclos Romain
+Jehanno Clément<br/>
+Caillaud Pierre<br/>
+Duclos Romain<br/>
 
-M1-ALMA 2017-2018
+M1-ALMA 2017-2018<br/>
 
 # Plan
 
@@ -88,19 +88,19 @@ Ensuite il a fallu mettre l'ensemble des données dans un même dataset. Notre p
 
 Exemple :
 
-[
- "ville1":
-      { "nom":"",
-        "annee":"",
-        "pollution":{...},
-        "traffic_routier":{...},
-        ...
-      },
- "ville2": {...},
+    [
 
- ...
+      "ville1":
+        { "nom":"",
+          "annee":"",
+          "pollution":{...},
+          "traffic_routier":{...},
+          ...
+        },
+      "ville2": {...},
 
-]
+    ...
+    ]
 
 Bien que cela aurait été plus "lisible" en terme d'attribut et de regroupement de données, ca ne nous arrangeait pas vraiment plus pour les requêtes car il aurait fallu descendre à chaque fois dans des sous-documents, etc.
 
@@ -108,19 +108,19 @@ Nous avons décidé de faire plus simple. Chaque dataset a été copié de mani�
 
 Exemple :
 
-[
-	{}, |
-	{}, | données pollutions
-	... |
-
-	{}, |
-	{}, | données réserves naturelles
-	... |
-
-	{}, |
-	{}, | données traffic
-	... |
-]
+    [
+    	{}, |
+    	{}, | données pollutions
+    	... |
+      
+    	{}, |
+    	{}, | données réserves naturelles
+    	... |
+      
+    	{}, |
+    	{}, | données traffic
+    	... |
+    ]
 
 Dans la partie suivante, nous allons expliquer de quelle façon nous avons lié nos données dans le dataset final.
 
