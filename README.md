@@ -197,7 +197,7 @@ Le deuxième nous montre bien, par ville, l'espace de réserves naturelles qui s
 ![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_8_1.png)
 
 
-### 4.5 Q_9
+### 4.5 Evolution de la pollution au cours des années
 
 Cette requête est la requête numéro 9 :
 
@@ -211,3 +211,12 @@ Nous avons tracé deux graphiques : l'un pour Nantes et l'autre pour le Mans de 
 ![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graphe_9_Mans.png)
 
 ![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graphe_9_Nantes.png)
+
+
+### 4.6 Evolution de la pollution au cours des années
+
+Cette requête est la requête numéro 10 :
+
+Pour cette requête nous avons utilisés un map reduce 
+
+![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graphe_10.png)
