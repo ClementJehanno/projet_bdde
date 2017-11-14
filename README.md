@@ -183,7 +183,7 @@ Cette requête est la requête numéro 8 :
 
 Par année, par commune, la moyenne de la qualité de l'air ainsi que la moyenne des sous indices.
 
-db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", nom:{$push:"$Nom_res_nat"}, somme_surface:{$sum:"$Surface_m2"}, indice_qualite_air:{$avg:"$Ind_qual_air"}}}, {$sort:{"somme_surface":-1}}])
+    db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", nom:{$push:"$Nom_res_nat"}, somme_surface:{$sum:"$Surface_m2"}, indice_qualite_air:{$avg:"$Ind_qual_air"}}}, {$sort:{"somme_surface":-1}}])
 
 Cette requête va regrouper en fonction des villes proches, les réserves naturelles qui y sont associées ainsi que leur surface.
 
