@@ -145,4 +145,13 @@ résultat:
 
 ### 4.2 Corrélation entre la pollution des villes et le nombre de montées et descente des trains.
 
+Comme nous l'avons dit plus haut nous allons essayer de corréler nos données.
+Pour ça nous avons fait quelques représentations visuelles des résultats de nos requêtes.
+
+Voici la requête numéro 4 :
+
+db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:"$Mont_desc_gares"},  pollution_moyenne:{$avg:"$Ind_qual_air"}}}])
+
+Elle regroupe par ville, la moyenne de montées et descente en gare avec la moyenne de la pollution.
+
 ![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_4.png "Graphe résultat requête 4")
