@@ -174,7 +174,7 @@ Ici nous allons prendre l'exemple de l'année 2009.
 
 La requête "match" sur toutes les valeurs dont le champ année vaut 2009 puis nous groupons par commune et ajoutons les champs nécessaires à nos moyennes.
 
-![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_6.png "Graphe résultat requête 6")
+![Graphique résultat requête 6](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_6.png "Graphe résultat requête 6")
 
 
 ### 4.4 Répartition des surfaces des réserves naturelles
@@ -191,11 +191,11 @@ Nous avons coupé la requête en deux graphiques.
 
 Le premier exhibe pour les villes l'indice de qualité d'air moyen.
 
-![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_8_2.png)
+![Graphique résultat requête 8 partie 2](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graph_8_2.png)
 
 Le deuxième nous montre bien, par ville, l'espace de réserves naturelles qui sont à proximité
 
-![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_8_1.png)
+![Graphique résultat requête 8 partie 1](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graph_8_1.png)
 
 
 ### 4.5 Evolution de la pollution au cours des années
@@ -209,9 +209,9 @@ Elle regroupe par année et commune les indices de pollution par ville, elle nou
 Elle regroupe donc par année et par ville proche les indices respectifs de pollution. 
 Nous avons tracé deux graphiques : l'un pour Nantes et l'autre pour le Mans de l'indice global :
 
-![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graphe_9_Mans.png)
+![Graphique résultat requête 9 le Mans](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graphe_9_Mans.png)
 
-![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graphe_9_Nantes.png)
+![Graphique résultat requête Nantes](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graphe_9_Nantes.png)
 
 
 ### 4.6 Evolution de la pollution au cours des années
@@ -237,4 +237,4 @@ Nous avons compris trop tard l'intérêt du map réduce mais qui ici est primord
      })
 
 
-![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graphe_10.png)
+![Graphique résultat requête 10](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graphe_10.png)
