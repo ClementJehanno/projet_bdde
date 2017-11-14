@@ -156,7 +156,7 @@ Voici la requête numéro 4 :
 
 Elle regroupe par ville, la moyenne de montées et descente en gare avec la moyenne de la pollution.
 
-![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_4.png "Graphe résultat requête 4")
+![Graphe résultat requête 4](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graph_4.png "Graphe résultat requête 4")
 
 Ce graphique nous montre qu'il est difficile de trouver une corrélation. En effet nos moyennes varient selon les villes mais globalement l'indice de pollution reste le même, il semble donc que les montées et descente de gares ne soient pas un facteur suffisant à lui seul pour exprimer une quelconque corrélation avec la pollution.
 
