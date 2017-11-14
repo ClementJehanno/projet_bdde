@@ -1,5 +1,5 @@
-# Projet base de données 
-Ceci est le github associé à notre projet de base de données 
+# Projet base de données
+Ceci est le github associé à notre projet de base de données
 
 # Plan
 
@@ -9,7 +9,7 @@ Ceci est le github associé à notre projet de base de données
   * Datasets utilisés
 
 
-# Présentation du sujet 
+# Présentation du sujet
 
 Nous avons choisi d'étudier la qualité de l'air dans la région des Pays de la Loire.
 L'idée à court terme était de pouvoir obtenir quelques informations concernant le niveau moyen de qualité de l'air, voir quelles villes sont plus ou moins bien placées etc.
@@ -17,7 +17,7 @@ Nos données sont réparties par région, code postal, qualité de l'air ainsi q
 A terme l'idée est de faire nos aggrégats avec différentes données en les passants dans Talend et ainsi en augmentant la taille de nos données en recoupants plusieurs données différentes.
 Il faudra donc refaire nos aggrégats proprement.
 
-# Instructions 
+# Instructions
 
 ## 1. Outils
 
@@ -25,8 +25,8 @@ Le choix de notre base de donnée s'est orientée vers une base NoSQL.
  * Pourquoi le NoSQL ? <br/>
 Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir déjà fait du Oracle l'année passée et avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir pourquoi.
  Deuxièmement, il faut savoir que nous avons eu quelques explications sur les 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*)
- Partant de ce principe, il faut savoir quel type de données nous avons à traiter. Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Notre document est structuré de la manière suivante : 
-  
+ Partant de ce principe, il faut savoir quel type de données nous avons à traiter. Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Notre document est structuré de la manière suivante :
+
 >   *{  <br/>
 >    "VILLE": "ANGERS",  <br/>
 >    "CODE_INSEE": 49007,  <br/>
@@ -40,26 +40,26 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
 >    "SOUS_INDICE_DIOXYDE_DE_SOUFRE": 1, <br/>
 >    "CODE_COULEUR": "VERT" <br/>
 >    }* <br/>
-  
+
  Pour chaque ville nous avons certaines informations quand à sa position et surtout, les informations quand à la pollution.
  Ainsi le choix d'une base de données NoSQL orientée document semble légitime.
-  
+
    * MongoDB <br/>
    Nous nous sommes donc orientés vers une base de donnée mongoDB pour les raisons plus haut.
    Quelques notions d'utilisation de mongoDB :
    Installation par le biais de la documentation officielle : <a href="https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/" > https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/ </a>
-   Pour l'import nous avons utilisé la commande suivante : 
+   Pour l'import nous avons utilisé la commande suivante :
    >mongoimport --jsonArray --db projetBDE --collection qualite_air --file /CHEMIN/qualite_air_bon_format.json <br/>
-   
-   
+
+
    Les requêtes sont dans le fichier queries.txt présent dans le dépôt.
-   
+
    * Le format JSON <br/>
   Le format par mongoDB est en JSON ce qui justifie ce choix pour nos données qui sont aussi disponibles en CSV, etc.
-  
+
   * Talend <br/>
   Pour faire notre table d'aggrégats il nous est nécessaire de passer par Talend afin de regrouper **toutes** nos données, éliminer le bruit, les réagencer, et finalement les importer dans mongoDB.
-  
+
 ## 2. Datasets utilisés
 
 Les datasets que nous avons utilisés sont divers.
@@ -82,11 +82,11 @@ Nous allons chercher à donner du sens à nos données, difficile de les interpr
 
 Nos requêtes sont disponibles dans le fichier queries_FINAL.txt cependant nous allons revenir sur certaines d'entre elle ici.
 
-### 4.1 Regrouper les villes et leur pollution moyenne 
+### 4.1 Regrouper les villes et leur pollution moyenne
 
 > db.test_format.aggregate([{$group:{_id:"$VILLE",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
 
-La première partie 
+La première partie
 > db.test_format.aggregate([{$group:{_id:"$VILLE", ........... }}}}]) <br/>
 
 
@@ -107,4 +107,35 @@ résultat:
 > { "_id" : "LA ROCHE-SUR-YON", "indice_qualite_air" : 3.891145595618439 } <br/>
 
 
-### 4.2 
+### 4.2
+
+## 5. Jaipasdetitre
+
+L'un des objectifs que l'on s'est fixé avec les datasets que l'on a choisi est d'établir des corrélations entre des données.
+
+Or les seuls attributs qui peuvent nous permettre de faire des requêtes par zones sont les coordonnées GPS ("LATITUDE" et "LONGITUDE"). Mais deux points, même très proches, possèdent des latitudes et longitudes différentes. Nous avons alors fait le choix de fixer des points de référence qu'on associerait à chaque objet possédant une latitude et une longitude. Nous avons choisi d'utiliser quelques grandes déjà présentent dans d'autres objets comme points de référence (communes\_min.json).
+
+Il nous à donc fallu créé un script (script.cpp) qui ajoute à chaque objet un attribut COMMUNE\_REF correspondant à la commune la plus proche de la coordonnée GPS de l'objet observé. Par exemple l'objet contenant les donnée de passage d'une borne près de saint-Nazaire:
+
+    {
+        "Code par défaut": 132,
+        "Nom normalisée de la route départementale": "44 D0723",
+        "Numéro de la borne routière": 5,
+        ...
+        "LATITUDE": 47.2614042058,
+        "LONGITUDE": -1.97972158605
+    }
+
+devient:
+
+    {
+      "Code par défaut": 132,
+      "Nom normalisée de la route départementale": "44 D0723",
+      "Numéro de la borne routière": 5,
+      ...
+      "LATITUDE": 47.2614042058,
+      "LONGITUDE": -1.97972158605,
+      "COMMUNE_REF" : "Saint-Nazaire"
+    }
+
+Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de la distance euclidienne entre la coordonnée GPS de l'objet et la coordonnée GPS de la commune de référence. Les objets ainsi formés nous permettent de faire des requête plus intéressantes.
