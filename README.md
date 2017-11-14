@@ -7,6 +7,10 @@ Ceci est le github associé à notre projet de base de données
 * Instructions
   * Outils
   * Datasets utilisés
+  * Agrégats 
+  * Création des agrégats
+* Requêtes
+
 
 
 # Présentation du sujet
@@ -25,7 +29,7 @@ Le choix de notre base de donnée s'est orientée vers une base NoSQL.
  * Pourquoi le NoSQL ? <br/>
 Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir déjà fait du Oracle l'année passée et avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir pourquoi.
  Deuxièmement, il faut savoir que nous avons eu quelques explications sur les 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*)
- Partant de ce principe, il faut savoir quel type de données nous avons à traiter. Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Notre document est structuré de la manière suivante :
+ Partant de ce principe, il faut savoir quel type de données nous avons à traiter. Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Le document qualité de l'air est structuré de la manière suivante :
 
 >   *{  <br/>
 >    "VILLE": "ANGERS",  <br/>
@@ -43,6 +47,7 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
 
  Pour chaque ville nous avons certaines informations quand à sa position et surtout, les informations quand à la pollution.
  Ainsi le choix d'une base de données NoSQL orientée document semble légitime.
+ Cependant, nous verrons par la suite que ce n'est pas le seul document que nous traitons. Il sera donc nécessaire de travailler nos données pour refaire nos aggrégats.
 
    * MongoDB <br/>
    Nous nous sommes donc orientés vers une base de donnée mongoDB pour les raisons plus haut.
@@ -51,14 +56,8 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
    Pour l'import nous avons utilisé la commande suivante :
    >mongoimport --jsonArray --db projetBDE --collection qualite_air --file /CHEMIN/qualite_air_bon_format.json <br/>
 
-
-   Les requêtes sont dans le fichier queries.txt présent dans le dépôt.
-
    * Le format JSON <br/>
   Le format par mongoDB est en JSON ce qui justifie ce choix pour nos données qui sont aussi disponibles en CSV, etc.
-
-  * Talend <br/>
-  Pour faire notre table d'aggrégats il nous est nécessaire de passer par Talend afin de regrouper **toutes** nos données, éliminer le bruit, les réagencer, et finalement les importer dans mongoDB.
 
 ## 2. Datasets utilisés
 
@@ -72,44 +71,15 @@ Nous avons donc commencé par regrouper nos agrégats des différents fichiers, 
 Nous avons aussi profité de cette étape pour augmenter la consistance de nos données et ainsi avoir une richesse des données importantes.
 Au final nous avons regroupé 9 fichiers dans notre table.
 Ensuite il est venu la question de donner du sens à nos données. Nos données ont en commun des dates et des données gps. <br/>
-Le format de date nous pose un souci car dans certaines données nos dates sont au format JJ/MM/AAAA et dans d'autres au format MM/AAAA ou directement AAAA. Nous aurions pu directement traiter les données de sorte à ce que tout soit disponible à l'année, nous avons préféré essayer d'implémenter un mapreduce.
+Le format de date nous pose un souci car dans certaines données nos dates sont au format JJ/MM/AAAA et dans d'autres au format MM/AAAA ou directement AAAA. Nous avons donc traité les données de sorte à ce que tout soit disponible à l'année. Nous avons donc séparé les champs.
+Nous allons chercher à donner du sens à nos données, difficile de les interpréter, peut-être que le facteur de baisse de pollution n'est pas exclusivement lié au fait que les gens prennent plus le train, mais il peut y avoir une corrélation.
 Les données gps cependant nous sont pratiques. L'idée est la suivante : <br/>
 Toutes nos données ont des latitudes et des longitudes, qu'il s'agisse d'une borne routière, d'une station de gare ou bien même d'une ville.
 Pour donner du sens à nos requêtes il faut regrouper toutes ces données et traiter un périmètre, ainsi on pourra dire "aux alentours de Nantes il y a eu plus de personnes qui ont pris le train en 2016 que en 2015 et on constate aussi que la pollution aux alentours de Nantes a diminué entre 2016 et 2015."
-Nous allons chercher à donner du sens à nos données, difficile de les interpréter, peut-être que le facteur de baisse de pollution n'est pas exclusivement lié au fait que les gens prennent plus le train, mais il peut y avoir une corrélation.
-
-## 4. Requêtes
-
-Nos requêtes sont disponibles dans le fichier queries_FINAL.txt cependant nous allons revenir sur certaines d'entre elle ici.
-
-### 4.1 Regrouper les villes et leur pollution moyenne
-
-> db.test_format.aggregate([{$group:{_id:"$VILLE",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
-
-La première partie
-> db.test_format.aggregate([{$group:{_id:"$VILLE", ........... }}}}]) <br/>
+C'est cette transformation que nous allons expliquer :
 
 
-regroupe par VILLE, il se base sur la clé VILLE pour faire son group by. Dans mongoDB cela se traduit par le champ _id: c'est lui donner la clé.<br/>
-La deuxième partie
-> db.test_format.aggregate([{$group:{......, indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
-
-
-Ici on fait la moyenne des indices de qualite de l'air. On pourrait rajouter d'autres champs (par exemple concernant le dioxyde d'azote ou encore le dioxyde de souffre)
-
-résultat:
-> { "_id" : "NANTES", "indice_qualite_air" : 3.8716401535929785 } <br/>
-> { "_id" : "LAVAL", "indice_qualite_air" : 3.7373944786675795 } <br/>
-> { "_id" : "ANGERS", "indice_qualite_air" : 3.9274469541409993 } <br/>
-> { "_id" : "CHOLET", "indice_qualite_air" : 3.9016655258955053 } <br/>
-> { "_id" : "LE MANS", "indice_qualite_air" : 3.841889117043121 } <br/>
-> { "_id" : null, "indice_qualite_air" : null } <br/>
-> { "_id" : "LA ROCHE-SUR-YON", "indice_qualite_air" : 3.891145595618439 } <br/>
-
-
-### 4.2
-
-## 5. Jaipasdetitre
+## 5. Création des agrégats
 
 L'un des objectifs que l'on s'est fixé avec les datasets que l'on a choisi est d'établir des corrélations entre des données.
 
@@ -139,3 +109,38 @@ devient:
     }
 
 Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de la distance euclidienne entre la coordonnée GPS de l'objet et la coordonnée GPS de la commune de référence. Les objets ainsi formés nous permettent de faire des requête plus intéressantes.
+
+
+## 4. Requêtes
+
+Une fois que nos aggrégats sont fait. Regroupés dans la même base et avec un point de référence proche
+Nos requêtes sont disponibles dans le fichier queries_FINAL.txt cependant nous allons revenir sur certaines d'entre elle ici.
+
+### 4.1 Regrouper les villes et leur pollution moyenne
+
+Cette requête est la Query 1 dans le fichier queries_FINAL.txt.
+
+> db.test_format.aggregate([{$group:{_id:"$VILLE",indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
+
+La première partie
+> db.test_format.aggregate([{$group:{_id:"$VILLE", ........... }}}}]) <br/>
+
+
+regroupe par VILLE, il se base sur la clé VILLE pour faire son group by. Dans mongoDB cela se traduit par le champ _id: c'est lui donner la clé.<br/>
+La deuxième partie
+> db.test_format.aggregate([{$group:{......, indice_qualite_air:{$avg:"$INDICE_QUALITE_AIR"}}}]) <br/>
+
+
+Ici on fait la moyenne des indices de qualite de l'air. On pourrait rajouter d'autres champs (par exemple concernant le dioxyde d'azote ou encore le dioxyde de souffre)
+
+résultat:
+> { "_id" : "NANTES", "indice_qualite_air" : 3.8716401535929785 } <br/>
+> { "_id" : "LAVAL", "indice_qualite_air" : 3.7373944786675795 } <br/>
+> { "_id" : "ANGERS", "indice_qualite_air" : 3.9274469541409993 } <br/>
+> { "_id" : "CHOLET", "indice_qualite_air" : 3.9016655258955053 } <br/>
+> { "_id" : "LE MANS", "indice_qualite_air" : 3.841889117043121 } <br/>
+> { "_id" : null, "indice_qualite_air" : null } <br/>
+> { "_id" : "LA ROCHE-SUR-YON", "indice_qualite_air" : 3.891145595618439 } <br/>
+
+
+### 4.2
