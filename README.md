@@ -143,4 +143,6 @@ résultat:
 > { "_id" : "LA ROCHE-SUR-YON", "indice_qualite_air" : 3.891145595618439 } <br/>
 
 
-### 4.2
+### 4.2 Corrélation entre la pollution des villes et le nombre de montées et descente des trains.
+
+![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_4.png "Graphe résultat requête 4")
