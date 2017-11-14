@@ -110,13 +110,13 @@ devient:
 Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de la distance euclidienne entre la coordonnée GPS de l'objet et la coordonnée GPS de la commune de référence. Les objets ainsi formés nous permettent de faire des requête plus intéressantes.
 
 
-## <a name="requetes"></a>Requêtes
+# <a name="requetes"></a>Requêtes
 
 Une fois que nos aggrégats sont fait et regroupés dans la même base et avec un point de référence proche nous pouvons commencer à faire des requêtes dessus.
 Nos vous invitons à consulter toutes nos requêtes qui sont disponibles dans le fichier [queries_rendu.txt](https://github.com/ClementJehanno/projet_bdde/blob/master/queries_rendu.txt) ou bien dans le dossier [/Queries_Results/js](https://github.com/ClementJehanno/projet_bdde/tree/master/Queries_Results/js)
 Dans cette section nous allons revenir sur certaines d'entre elle afin de les expliquer.
 
-### 1. Regrouper les villes et leur pollution moyenne
+## 1. Regrouper les villes et leur pollution moyenne
 
 Cette requête est la Query 1 dans le fichier queries_FINAL.txt.
 
@@ -145,7 +145,7 @@ résultat:
 > { "_id" : "LA ROCHE-SUR-YON", "indice_qualite_air" : 3.891145595618439 } <br/>
 
 
-### 2. Corrélation entre la pollution des villes et le nombre de montées et descente des trains.
+## 2. Corrélation entre la pollution des villes et le nombre de montées et descente des trains.
 
 Comme nous l'avons dit plus haut nous allons essayer de corréler nos données.
 Pour ça nous avons fait quelques représentations visuelles des résultats de nos requêtes.
@@ -162,7 +162,7 @@ Ce graphique nous montre qu'il est difficile de trouver une corrélation. En eff
 
 Nous allons essayer de trouver des données plus précises.
 
-### 3. Corrélation entre la pollution des villes et le trafic routier
+## 3. Corrélation entre la pollution des villes et le trafic routier
 
 Cette requête est la requête numéro 6 :
 
@@ -177,7 +177,7 @@ La requête "match" sur toutes les valeurs dont le champ année vaut 2009 puis n
 ![Graphique résultat requête 6](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graph_6.png "Graphe résultat requête 6")
 
 
-### 4. Répartition des surfaces des réserves naturelles
+## 4. Répartition des surfaces des réserves naturelles
 
 Cette requête est la requête numéro 8 :
 
@@ -198,7 +198,7 @@ Le deuxième nous montre bien, par ville, l'espace de réserves naturelles qui s
 ![Graphique résultat requête 8 partie 1](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graph_8_1.png)
 
 
-### 5. Evolution de la pollution au cours des années
+## 5. Evolution de la pollution au cours des années
 
 Cette requête est la requête numéro 9 :
 
@@ -214,7 +214,7 @@ Nous avons tracé deux graphiques : l'un pour Nantes et l'autre pour le Mans de 
 ![Graphique résultat requête Nantes](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graphe_9_Nantes.png)
 
 
-### 6. Evolution de la pollution au cours des années
+## 6. Evolution de la pollution au cours des années
 
 Cette requête est la requête numéro 10 :
 
