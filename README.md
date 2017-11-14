@@ -174,7 +174,7 @@ Ici nous allons prendre l'exemple de l'année 2009.
 
 La requête "match" sur toutes les valeurs dont le champ année vaut 2009 puis nous groupons par commune et ajoutons les champs nécessaires à nos moyennes.
 
-![Graphique résultat requête 6](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_6.png "Graphe résultat requête 6")
+![Graphique résultat requête 6](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graph_6.png "Graphe résultat requête 6")
 
 
 ### 4.4 Répartition des surfaces des réserves naturelles
