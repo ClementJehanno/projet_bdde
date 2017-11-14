@@ -4,24 +4,24 @@ Ceci est le github associé à notre projet de base de données
 # Plan
 
 * [Présentation du sujet](#pres)
-* Instructions
-  * Outils
-  * Datasets utilisés
-  * Agrégats 
-  * Création des agrégats
-* Requêtes
+* [Instructions](#instrus)
+  * [Outils](#outils)
+  * [Datasets utilisés](#datasets)
+  * [Agrégats](#agregats)
+  * [Création des agrégats](#crea_agregats)
+* [Requêtes](#requetes)
 
 
-# <a name="pres"></a> Présentation du sujet
+# <a name="pres"></a>Présentation du sujet
 
 Nous avons choisi d'étudier la qualité de l'air dans la région des Pays de la Loire.
 L'idée à court terme était de pouvoir obtenir quelques informations concernant le niveau moyen de qualité de l'air, voir quelles villes sont plus ou moins bien placées etc.
 Nos données sont réparties par région, code postal, qualité de l'air ainsi que d'autres facteurs de qualité, etc.
 A terme l'idée est de faire nos aggrégats en regroupant des données différentes et ainsi augmenter la taille de nos données.
 
-# Instructions
+# <a name="instrus"></a>Instructions
 
-## 1. Outils
+## 1. <a name="outils"></a>Outils
 
 Le choix de notre base de donnée s'est orientée vers une base NoSQL.
  * Pourquoi le NoSQL ? <br/>
@@ -58,12 +58,12 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
    * Le format JSON <br/>
   Le format par mongoDB est en JSON ce qui justifie ce choix pour nos données qui sont aussi disponibles en CSV, etc.
 
-## 2. Datasets utilisés
+## 2. <a name="datasets"></a>Datasets utilisés
 
 Les datasets que nous avons utilisés sont divers.
 Avant toute chose, en l'état actuel des choses nous n'avons travaillé que sur un seul dataset, mais, tout l'intéret du NoSQL consiste à regrouper différents datasets afin de garder les informations pertinentes et de faire des requêtes volumineuses et intéressantes, assez rapidement sur un seul gros json qui contient **toutes** les informations.
 
-## 3. Agrégats
+## 3. <a name="agregats"></a>Agrégats
 
 Comme dit précedemment il est nécessaire que nos données soient corrélées, et qu'on puisse en obtenir quelque chose de censé.
 Nous avons donc commencé par regrouper nos agrégats des différents fichiers, ainsi mettre les données de pollution dans la même collection que les données de trafic routier.
@@ -78,7 +78,7 @@ Pour donner du sens à nos requêtes il faut regrouper toutes ces données et tr
 C'est cette transformation que nous allons expliquer :
 
 
-## 5. Création des agrégats
+## 4. <a name="crea_agregats"></a>Création des agrégats
 
 L'un des objectifs que l'on s'est fixé avec les datasets que l'on a choisi est d'établir des corrélations entre des données.
 
@@ -110,13 +110,13 @@ devient:
 Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de la distance euclidienne entre la coordonnée GPS de l'objet et la coordonnée GPS de la commune de référence. Les objets ainsi formés nous permettent de faire des requête plus intéressantes.
 
 
-## 4. Requêtes
+## <a name="requetes"></a>Requêtes
 
 Une fois que nos aggrégats sont fait et regroupés dans la même base et avec un point de référence proche nous pouvons commencer à faire des requêtes dessus.
 Nos vous invitons à consulter toutes nos requêtes qui sont disponibles dans le fichier [queries_rendu.txt](https://github.com/ClementJehanno/projet_bdde/blob/master/queries_rendu.txt) ou bien dans le dossier [/Queries_Results/js](https://github.com/ClementJehanno/projet_bdde/tree/master/Queries_Results/js)
 Dans cette section nous allons revenir sur certaines d'entre elle afin de les expliquer.
 
-### 4.1 Regrouper les villes et leur pollution moyenne
+### 1. Regrouper les villes et leur pollution moyenne
 
 Cette requête est la Query 1 dans le fichier queries_FINAL.txt.
 
@@ -145,7 +145,7 @@ résultat:
 > { "_id" : "LA ROCHE-SUR-YON", "indice_qualite_air" : 3.891145595618439 } <br/>
 
 
-### 4.2 Corrélation entre la pollution des villes et le nombre de montées et descente des trains.
+### 2. Corrélation entre la pollution des villes et le nombre de montées et descente des trains.
 
 Comme nous l'avons dit plus haut nous allons essayer de corréler nos données.
 Pour ça nous avons fait quelques représentations visuelles des résultats de nos requêtes.
@@ -162,7 +162,7 @@ Ce graphique nous montre qu'il est difficile de trouver une corrélation. En eff
 
 Nous allons essayer de trouver des données plus précises.
 
-### 4.3 Corrélation entre la pollution des villes et le trafic routier
+### 3. Corrélation entre la pollution des villes et le trafic routier
 
 Cette requête est la requête numéro 6 :
 
@@ -177,7 +177,7 @@ La requête "match" sur toutes les valeurs dont le champ année vaut 2009 puis n
 ![Graphique résultat requête 6](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graph_6.png "Graphe résultat requête 6")
 
 
-### 4.4 Répartition des surfaces des réserves naturelles
+### 4. Répartition des surfaces des réserves naturelles
 
 Cette requête est la requête numéro 8 :
 
@@ -198,7 +198,7 @@ Le deuxième nous montre bien, par ville, l'espace de réserves naturelles qui s
 ![Graphique résultat requête 8 partie 1](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graph_8_1.png)
 
 
-### 4.5 Evolution de la pollution au cours des années
+### 5. Evolution de la pollution au cours des années
 
 Cette requête est la requête numéro 9 :
 
@@ -214,7 +214,7 @@ Nous avons tracé deux graphiques : l'un pour Nantes et l'autre pour le Mans de 
 ![Graphique résultat requête Nantes](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphiques/graphe_9_Nantes.png)
 
 
-### 4.6 Evolution de la pollution au cours des années
+### 6. Evolution de la pollution au cours des années
 
 Cette requête est la requête numéro 10 :
 
