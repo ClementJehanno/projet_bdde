@@ -113,8 +113,9 @@ Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de l
 
 ## 4. Requêtes
 
-Une fois que nos aggrégats sont fait. Regroupés dans la même base et avec un point de référence proche
-Nos requêtes sont disponibles dans le fichier queries_FINAL.txt cependant nous allons revenir sur certaines d'entre elle ici.
+Une fois que nos aggrégats sont fait. Regroupés dans la même base et avec un point de référence proche.
+Nos vous invitons à consulter toutes nos requêtes qui sont disponibles dans le fichier queries_FINAL.txt. 
+Dans cette section nous allons revenir sur certaines d'entre elle afin de les expliquer.
 
 ### 4.1 Regrouper les villes et leur pollution moyenne
 
@@ -155,3 +156,21 @@ db.test_final.aggregate([{$group:{_id:"$COMMUNE_REF", moy_montee_descente:{$avg:
 Elle regroupe par ville, la moyenne de montées et descente en gare avec la moyenne de la pollution.
 
 ![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_4.png "Graphe résultat requête 4")
+
+Ce graphique nous montre qu'il est difficile de trouver une corrélation. En effet nos moyennes varient selon les villes mais globalement l'indice de pollution reste le même, il semble donc que les montées et descente de gares ne soient pas un facteur suffisant à lui seul pour exprimer une quelconque corrélation avec la pollution.
+
+Nous allons essayer de trouver des données plus précises.
+
+### 4.3 Corrélation entre la pollution des villes et le trafic routier
+
+Cette requête est la requête numéro 6 :
+
+On va utiliser nos données routières. 
+Le seul souci avec ces données c'est que nous n'avons que les années 2009 et 2010. 
+Ici nous allons prendre l'exemple de l'année 2009.
+
+db.test_final.aggregate([{$match:{Annee:{$eq:2009}}}, {$group:{_id:"$COMMUNE_REF",  pollution_moyenne:{$avg:"$Ind_qual_air"},  somme_voiture:{$sum:"$Moy_jour_ann_tous_vehi"}, somme_poids_lourd:{$sum:"$Moy_jour_ann_poidsL"}}}])
+
+La requête "match" sur toutes les valeurs dont le champ année vaut 2009 puis nous groupons par commune et ajoutons les champs nécessaires à nos moyennes.
+
+![alt text](https://github.com/ClementJehanno/projet_bdde/blob/master/Graphes/graph_6.png "Graphe résultat requête 6")
