@@ -1,5 +1,11 @@
-# Projet base de données
-Ceci est le github associé à notre projet de base de données
+# Projet base de données évoluées
+Ceci est le dépot github associé à notre projet de base de données.
+
+Jehanno Clément
+Caillaud Pierre
+Duclos Romain
+
+M1-ALMA 2017-2018
 
 # Plan
 
@@ -15,9 +21,10 @@ Ceci est le github associé à notre projet de base de données
 # <a name="pres"></a>Présentation du sujet
 
 Nous avons choisi d'étudier la qualité de l'air dans la région des Pays de la Loire.
-L'idée à court terme était de pouvoir obtenir quelques informations concernant le niveau moyen de qualité de l'air, voir quelles villes sont plus ou moins bien placées etc.
+L'idée à court terme était de pouvoir obtenir quelques informations concernant le niveau moyen de qualité de l'air sur les régions/villes des Pays de la Loire.
 Nos données sont réparties par région, code postal, qualité de l'air ainsi que d'autres facteurs de qualité, etc.
-A terme l'idée est de faire nos aggrégats en regroupant des données différentes et ainsi augmenter la taille de nos données.
+Nous avons augmenté nos données avec des datasets sur la fréquentation des routes, des gares, les réserves naturelles, etc.
+Notre idée pour la suite était d'essayer de faire des liens entre la qualité de l'air et d'autres données.
 
 # <a name="instrus"></a>Instructions
 
@@ -25,9 +32,9 @@ A terme l'idée est de faire nos aggrégats en regroupant des données différen
 
 Le choix de notre base de donnée s'est orientée vers une base NoSQL.
  * Pourquoi le NoSQL ? <br/>
-Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir déjà fait du Oracle l'année passée et avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir comment était le langage et quelles étaient ses possibilités.
- Deuxièmement, comme nous avons eu des explications sur les 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*) il faut savoir quel type de données nous avons à traiter. 
- Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté à ce genre de base de données. Le document qualité de l'air est structuré de la manière suivante :
+Le premier facteur qui nous a influencé est celui de la découverte. Nous avions déjà fait du Oracle l'année passée et après avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir comment était le langage et quelles étaient ses possibilités.
+Il y a 4 différentes types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*), il faut savoir quel type de données nous avons à traiter. 
+ Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté au base de données NoSQL Le document qualité de l'air est structuré de la manière suivante :
 
 >   *{  <br/>
 >    "VILLE": "ANGERS",  <br/>
@@ -49,34 +56,73 @@ Le premier facteur qui nous a influencé est celui de l'ignorance, pour avoir d�
  Cependant, nous verrons par la suite que ce n'est pas le seul document que nous traitons. Il sera donc nécessaire de travailler nos données pour refaire nos aggrégats.
 
    * MongoDB <br/>
-   Nous nous sommes donc orientés vers une base de donnée mongoDB pour les raisons plus haut.
+   Nous nous sommes orientés vers l'outil mongoDB. C'est un outil qui dispose d'une bonne communauté et d'une documentation exhaustive. C'est un outil puissant et plutôt répendu qui est fait pour le NoSQL.
    Quelques notions d'utilisation de mongoDB :
    Installation par le biais de la documentation officielle : <a href="https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/" > https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/ </a>
    Pour l'import nous avons utilisé la commande suivante :
    >mongoimport --jsonArray --db projetBDE --collection qualite_air --file /CHEMIN/qualite_air_bon_format.json <br/>
 
    * Le format JSON <br/>
-  Le format par mongoDB est en JSON ce qui justifie ce choix pour nos données qui sont aussi disponibles en CSV, etc.
+  Le format par défaut de mongoDB est le JSON ce qui justifie un peu plus le choix de cet outil.
 
 ## 2. <a name="datasets"></a>Datasets utilisés
 
 Les datasets que nous avons utilisés sont divers.
-Avant toute chose, en l'état actuel des choses nous n'avons travaillé que sur un seul dataset, mais, tout l'intéret du NoSQL consiste à regrouper différents datasets afin de garder les informations pertinentes et de faire des requêtes volumineuses et intéressantes, assez rapidement sur un seul gros json qui contient **toutes** les informations.
+En l'état actuel des choses nous n'avons pas travaillé que sur un seul dataset. Mais, tout l'intéret du NoSQL consiste à regrouper différents datasets afin de garder les informations pertinentes et de faire des requêtes volumineuses et intéressantes.
+
+MongoDB permet d'utiliser plusieurs "collections", mais nous voulions lier nos données pour pouvoir tiré des résultats intéressant.
 
 ## 3. <a name="agregats"></a>Agrégats
 
-Comme dit précedemment il est nécessaire que nos données soient corrélées, et qu'on puisse en obtenir quelque chose de censé.
-Nous avons donc commencé par regrouper nos agrégats des différents fichiers, ainsi mettre les données de pollution dans la même collection que les données de trafic routier.
-Nous avons aussi profité de cette étape pour augmenter la consistance de nos données et ainsi avoir une richesse des données importantes.
-Au final nous avons regroupé 9 fichiers dans notre table.
-Ensuite il est venu la question de donner du sens à nos données. Nos données ont en commun des dates et des données gps. <br/>
-Le format de date nous pose un souci car dans certaines données nos dates sont au format JJ/MM/AAAA et dans d'autres au format MM/AAAA ou directement AAAA. Nous avons donc traité les données de sorte à ce que tout soit disponible à l'année. Nous avons donc séparé les champs.
-Nous allons chercher à donner du sens à nos données, difficile de les interpréter, peut-être que le facteur de baisse de pollution n'est pas exclusivement lié au fait que les gens prennent plus le train, mais il peut y avoir une corrélation.
-Les données gps cependant nous sont pratiques. L'idée est la suivante : <br/>
-Toutes nos données ont des latitudes et des longitudes, qu'il s'agisse d'une borne routière, d'une station de gare ou bien même d'une ville.
-Pour donner du sens à nos requêtes il faut regrouper toutes ces données et traiter un périmètre, ainsi on pourra dire "aux alentours de Nantes il y a eu plus de personnes qui ont pris le train en 2016 que en 2015 et on constate aussi que la pollution aux alentours de Nantes a diminué entre 2016 et 2015."
-C'est cette transformation que nous allons expliquer :
+Comme dit précedemment il etait nécessaire que nos données soient corrélées.
+La première étape avant de regrouper les dataset était de normaliser certains de nos attributs. Nous avons normalisé les dates et les locations GPS pour pouvoir lier plus facilement nos données par la suite.
+Pour faire cela nous avons tout simplement utilisé des expressions régulières directement les dataset concernés. Ce n'est pas la méthode la plus optimale car si nous avions un volume de données très important, de simples éditeurs de texte n'auraient pas supporter les modifications. A ce sujet nous avons essayé Talend mais cela nous a pris beaucoup de temps pour peu de résultat. Nos données n'étant pas trop volumineuses, nous sommes restés sur l'option la plus simple, les expressions régulières.
 
+Par exemple : 
+
+Certaines données de location GPS étaient de la forme "l" : "[47.6664, -0.111147]". Nous les voulions ainsi : "LATITUDE" : 47.6664, "LONGITUDE" : -0.111147. Avec une regex comme celle-ci : "[[0-9]*.[0-9]*, -?[0-9]*.[0-9]*]", nous avons pu récupérer toutes les valeurs de longitude et latitude. Puis nous les avons mise dans un autre fichier, là nous avons séparé les données avec un Chercher/Remplacer et enfin nous les avons remise dans le dataset originel.
+
+Nous avons fait les mêmes manipulations avec les dates, etc.
+
+Ensuite il a fallu mettre l'ensemble des données dans un même dataset. Notre première idée était de regrouper des données ensemble, puis de les mettre dans des sous documents, pour avoir une structure facilement lisible pour des personnes.
+
+Exemple :
+
+[
+ "ville1":
+      { "nom":"",
+        "annee":"",
+        "pollution":{...},
+        "traffic_routier":{...},
+        ...
+      },
+ "ville2": {...},
+
+ ...
+
+]
+
+Bien que cela aurait été plus "lisible" en terme d'attribut et de regroupement de données, ca ne nous arrangeait pas vraiment plus pour les requêtes car il aurait fallu descendre à chaque fois dans des sous-documents, etc.
+
+Nous avons décidé de faire plus simple. Chaque dataset a été copié de manière brute dans le JSON final. Ainsi, chaque attribut est disponible en accès direct (sans descendre dans un sous-documents). Cette facon de faire brut n'est cependant pas la meilleure façon de faire. Si nous avions énormément de données, copier des données de cette façon aurait été très compliqué. Toutefois, nous avions commencé à développer une idée pour lier nos documents/données entre-elles, nous avons donc gardé le dataset final fait ainsi.
+
+Exemple :
+
+[
+	{}, |
+	{}, | données pollutions
+	... |
+
+	{}, |
+	{}, | données réserves naturelles
+	... |
+
+	{}, |
+	{}, | données traffic
+	... |
+]
+
+Dans la partie suivante, nous allons expliquer de quelle façon nous avons lié nos données dans le dataset final.
 
 ## 4. <a name="crea_agregats"></a>Création des agrégats
 
@@ -109,11 +155,12 @@ devient:
 
 Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de la distance euclidienne entre la coordonnée GPS de l'objet et la coordonnée GPS de la commune de référence. Les objets ainsi formés nous permettent de faire des requête plus intéressantes.
 
+Ce nouvel attribut nous permet de lier toutes nos données. Nous avons créé un index dessus pour gagner en performances étant donné que cet attribut "liant" est présent dans presque toutes nos requêtes.
 
 # <a name="requetes"></a>Requêtes
 
 Une fois que nos aggrégats sont fait et regroupés dans la même base et avec un point de référence proche nous pouvons commencer à faire des requêtes dessus.
-Nos vous invitons à consulter toutes nos requêtes qui sont disponibles dans le fichier [queries_rendu.txt](https://github.com/ClementJehanno/projet_bdde/blob/master/queries_rendu.txt) ou bien dans le dossier [/Queries_Results/js](https://github.com/ClementJehanno/projet_bdde/tree/master/Queries_Results/js)
+Nous vous invitons à consulter toutes nos requêtes qui sont disponibles dans le fichier [queries_rendu.txt](https://github.com/ClementJehanno/projet_bdde/blob/master/queries_rendu.txt) ou bien dans le dossier [/Queries_Results/js](https://github.com/ClementJehanno/projet_bdde/tree/master/Queries_Results/js)
 Dans cette section nous allons revenir sur certaines d'entre elle afin de les expliquer.
 
 ## 1. Regrouper les villes et leur pollution moyenne
