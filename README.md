@@ -16,7 +16,7 @@ M1-ALMA 2017-2018<br/>
   * [Agrégats](#agregats)
   * [Création des agrégats](#crea_agregats)
 * [Requêtes](#requetes)
-* [Présentation du sujet](#ccl)
+* [Conclusion](#ccl)
 
 # <a name="pres"></a>Présentation du sujet
 
