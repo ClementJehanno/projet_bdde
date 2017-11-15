@@ -72,6 +72,8 @@ En l'état actuel des choses nous n'avons pas travaillé que sur un seul dataset
 
 MongoDB permet d'utiliser plusieurs "collections", mais nous voulions lier nos données pour pouvoir tirer des résultats intéressants.
 
+[Lien vers les datasets](https://github.com/ClementJehanno/projet_bdde/tree/master/Data/Data_brut_json)
+
 ## 3. <a name="agregats"></a>Agrégats
 
 Comme dit précedemment il etait nécessaire que nos données soient corrélées.
