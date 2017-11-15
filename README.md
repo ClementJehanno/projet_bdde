@@ -30,10 +30,10 @@ Notre idée pour la suite était d'essayer de faire des liens entre la qualité 
 
 ## 1. <a name="outils"></a>Outils
 
-Le choix de notre base de donnée s'est orientée vers une base NoSQL.
+Le choix de notre base de donnée s'est orientée vers une base en NoSQL.
  * Pourquoi le NoSQL ? <br/>
 Le premier facteur qui nous a influencé est celui de la découverte. Nous avions déjà fait du Oracle l'année passée et après avoir eu quelques informations sur le NoSQL en début d'année nous voulions savoir comment était le langage et quelles étaient ses possibilités.
-Il y a 4 différentes types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*), il faut savoir quel type de données nous avons à traiter.
+Il y a 4 différents types de base de données NoSQL (*Key-Value*, *Document*, *Colonnes*), il faut savoir quel type de données nous avons à traiter.
  Dans le cadre de la qualité de l'air nous traitons du json, format totalement adapté au base de données NoSQL Le document qualité de l'air est structuré de la manière suivante :
 
 >   *{  <br/>
@@ -58,7 +58,7 @@ Il y a 4 différentes types de base de données NoSQL (*Key-Value*, *Document*, 
    * MongoDB <br/>
    Nous nous sommes orientés vers l'outil mongoDB. C'est un outil qui dispose d'une bonne communauté et d'une documentation exhaustive. C'est un outil puissant et plutôt répendu qui est fait pour le NoSQL.
    Quelques notions d'utilisation de mongoDB :
-   Installation par le biais de la documentation officielle : <a href="https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/" > https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/ </a>
+   Installation par le biais de la [documentation officielle](https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/)
    Pour l'import nous avons utilisé la commande suivante :
    >mongoimport --jsonArray --db projetBDE --collection qualite_air --file /CHEMIN/qualite_air_bon_format.json <br/>
 
@@ -70,7 +70,7 @@ Il y a 4 différentes types de base de données NoSQL (*Key-Value*, *Document*, 
 Les datasets que nous avons utilisés sont divers.
 En l'état actuel des choses nous n'avons pas travaillé que sur un seul dataset. Mais, tout l'intéret du NoSQL consiste à regrouper différents datasets afin de garder les informations pertinentes et de faire des requêtes volumineuses et intéressantes.
 
-MongoDB permet d'utiliser plusieurs "collections", mais nous voulions lier nos données pour pouvoir tiré des résultats intéressant.
+MongoDB permet d'utiliser plusieurs "collections", mais nous voulions lier nos données pour pouvoir tirer des résultats intéressants.
 
 ## 3. <a name="agregats"></a>Agrégats
 
@@ -128,9 +128,9 @@ Dans la partie suivante, nous allons expliquer de quelle façon nous avons lié 
 
 L'un des objectifs que l'on s'est fixé avec les datasets que l'on a choisi est d'établir des corrélations entre des données.
 
-Or les seuls attributs qui peuvent nous permettre de faire des requêtes par zones sont les coordonnées GPS ("LATITUDE" et "LONGITUDE"). Mais deux points, même très proches, possèdent des latitudes et longitudes différentes. Nous avons alors fait le choix de fixer des points de référence qu'on associerait à chaque objet possédant une latitude et une longitude. Nous avons choisi d'utiliser quelques grandes déjà présentent dans d'autres objets comme points de référence (communes\_min.json).
+Or les seuls attributs qui peuvent nous permettre de faire des requêtes par zones sont les coordonnées GPS ("LATITUDE" et "LONGITUDE"). Mais deux points, même très proches, possèdent des latitudes et longitudes différentes. Nous avons alors fait le choix de fixer des points de référence qu'on associerait à chaque objet possédant une latitude et une longitude. Nous avons choisi d'utiliser quelques grandes déjà présentent dans d'autres objets comme points de référence ([communes\_min.json](https://github.com/ClementJehanno/projet_bdde/blob/master/communes_min.json)).
 
-Il nous à donc fallu créé un script (script.cpp) qui ajoute à chaque objet un attribut COMMUNE\_REF correspondant à la commune la plus proche de la coordonnée GPS de l'objet observé. Par exemple l'objet contenant les donnée de passage d'une borne près de saint-Nazaire:
+Il a donc fallu créer un script ([script\_commune.cpp](https://github.com/ClementJehanno/projet_bdde/blob/master/script_commune.cpp)) qui ajoute à chaque objet un attribut COMMUNE\_REF correspondant à la commune la plus proche de la coordonnée GPS de l'objet observé. Par exemple l'objet contenant les données de passage d'une borne près de saint-Nazaire:
 
     {
         "Code par défaut": 132,
@@ -158,7 +158,7 @@ Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de l
 Ce nouvel attribut nous permet de lier toutes nos données. Nous avons créé un index dessus pour gagner en performances étant donné que cet attribut "liant" est présent dans presque toutes nos requêtes.
 Création de l'index :
 
-     db.test_final.createIndex( {COMMUNE_REF:1})
+     db.test_final.createIndex( {COMMUNE_REF:1} )
 
 
 # <a name="requetes"></a>Requêtes
@@ -270,8 +270,8 @@ Nous avons tracé deux graphiques : l'un pour Nantes et l'autre pour le Mans de 
 Cette requête est la requête numéro 10 :
 
 Elle nous permet de compter l'évolution du nombre de stations par année.
-Pour cette requête nous avons utilisés un map reduce, en effet il nous était impossible de grouper par année et de faire un count en même temps, nous avons eu le même souci sur la requête 7 (cf le fichier queries_FINAL.txt) que nous avons du séparer en quatre.
-Nous avons compris trop tard l'intérêt du map réduce mais qui ici est primordial car il nous permet à la fois de grouper par année en mettant l'année comme clé, et de faire la réducttion sur les stations tout en les comptant.
+Pour cette requête nous avons utilisés un map reduce, en effet il nous était impossible de grouper par année et de faire un count en même temps, nous avons eu le même souci sur la requête 7 (cf le fichier queries_FINAL.txt) que nous avons du séparer en quatre. <br/>
+Nous avons compris trop tard l'intérêt du map reduce. Dans cette requête il est pourtant nécessaire d'en faire un. En effet, il nous permet à la fois de grouper par année en mettant l'année comme clé et de faire la réduction sur les stations tout en les comptant.
 
 
     db.final.group({
