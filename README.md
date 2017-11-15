@@ -76,11 +76,11 @@ MongoDB permet d'utiliser plusieurs "collections", mais nous voulions lier nos d
 
 Comme dit précedemment il etait nécessaire que nos données soient corrélées.
 La première étape avant de regrouper les dataset était de normaliser certains de nos attributs. Nous avons normalisé les dates et les locations GPS pour pouvoir lier plus facilement nos données par la suite.
-Pour faire cela nous avons tout simplement utilisé des expressions régulières directement les dataset concernés. Ce n'est pas la méthode la plus optimale car si nous avions un volume de données très important, de simples éditeurs de texte n'auraient pas supporter les modifications. A ce sujet nous avons essayé Talend mais cela nous a pris beaucoup de temps pour peu de résultat. Nos données n'étant pas trop volumineuses, nous sommes restés sur l'option la plus simple, les expressions régulières.
+Pour faire cela nous avons tout simplement utilisé des expressions régulières directement les dataset concernés. Ce n'est pas la méthode la plus optimale car si nous avions un volume de données très important, de simples éditeurs de texte n'auraient pas supporté les modifications. A ce sujet nous avons essayé Talend mais cela nous a pris beaucoup de temps pour peu de résultat. Nos données n'étant pas trop volumineuses, nous sommes restés sur l'option la plus simple, les expressions régulières.
 
 Par exemple :
 
-Certaines données de location GPS étaient de la forme "l" : "[47.6664, -0.111147]". Nous les voulions ainsi : "LATITUDE" : 47.6664, "LONGITUDE" : -0.111147. Avec une regex comme celle-ci : "[[0-9]*.[0-9]*, -?[0-9]*.[0-9]*]", nous avons pu récupérer toutes les valeurs de longitude et latitude. Puis nous les avons mise dans un autre fichier, là nous avons séparé les données avec un Chercher/Remplacer et enfin nous les avons remise dans le dataset originel.
+Certaines données de location GPS étaient de la forme "l" : "[47.6664, -0.111147]". Nous les voulions ainsi : "LATITUDE" : 47.6664, "LONGITUDE" : -0.111147. Avec une regex comme celle-ci : "[[0-9]*.[0-9]*, -?[0-9]*.[0-9]*]", nous avons pu récupérer toutes les valeurs de longitude et latitude. Puis nous les avons mises dans un autre fichier, là nous avons séparé les données avec un Chercher/Remplacer et enfin nous les avons remises dans le dataset originel.
 
 Nous avons fait les mêmes manipulations avec les dates, etc.
 
@@ -292,8 +292,8 @@ Nous avons compris trop tard l'intérêt du map reduce. Dans cette requête il e
 
 # <a name="ccl"></a>Conclusion
 
-Nous sommes parvenus à regrouper un grand nombre de donnée sur des domaines variés tels que la qualité de l'air, la présence de réserves naturelles et les statistiques sur les transports dans la région des Pays de la Loire. On constate cependant que peu d'attributs permettent de lier les données brutes entre elles. Nous sommes tout de même parvenus à arranger les données de façon à pourvoir les interpréter un peu plus finement. Les données ainsi récupérées ne nous permettent pas d'établir de corrélations directes mais certaines, après analyse, nous révèlent quelques faits cohérents.
+Nous sommes parvenus à regrouper un grand nombre de données sur des domaines variés tels que la qualité de l'air, la présence de réserves naturelles et les statistiques sur les transports dans la région des Pays de la Loire. On constate cependant que peu d'attributs permettent de lier les données brutes entre elles. Nous sommes tout de même parvenus à arranger les données de façon à pouvoir les interpréter un peu plus finement. Les données ainsi récupérées ne nous permettent pas d'établir de corrélations directes mais certaines, après analyse, nous révèlent quelques faits cohérents.
 
-Pour observer de réelles  corrélations il aurait fallu que nos datasets aient un niveau granularité plus élevé et qu'ils nous renseignent sur une période de temps commune et relativement large. Des données supplémentaire tel que des données sur les activités industrielle par zone, par exemple, nous auraient sans doute aussi permis d'affiner nos observations.
+Pour observer de réelles  corrélations il aurait fallu que nos datasets aient un niveau de granularité plus élevé et qu'ils nous renseignent sur la même période temporelle et suffisamment étendue. Des données supplémentaires telles que des données sur les activités industrielles par zone, par exemple, nous auraient sans doute aussi permis d'affiner nos observations.
 
-Globalement, même si les données ne sont ni suffisamment précises ni en quantité suffisante pour tirer de réelles conclusions, elles nous permettent de faire des observations intéressantes tels que celles illustrées sur les graphiques plus haut et qui sont tirés des résultats de quelques unes de nos requêtes.
+Globalement, même si les données ne sont, ni suffisamment précises, ni en quantité suffisante pour tirer de réelles conclusions, elles nous permettent de faire des observations intéressantes telles que celles illustrées sur les graphiques plus haut et qui sont tirées des résultats de quelques unes de nos requêtes.
