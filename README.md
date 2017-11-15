@@ -156,6 +156,10 @@ devient:
 Le calcul de la commune la plus proche ("COMMUNE\_REF") se fait en fonction de la distance euclidienne entre la coordonnée GPS de l'objet et la coordonnée GPS de la commune de référence. Les objets ainsi formés nous permettent de faire des requête plus intéressantes.
 
 Ce nouvel attribut nous permet de lier toutes nos données. Nous avons créé un index dessus pour gagner en performances étant donné que cet attribut "liant" est présent dans presque toutes nos requêtes.
+Création de l'index :
+
+     db.test_final.createIndex( {COMMUNE_REF:1})
+
 
 # <a name="requetes"></a>Requêtes
 
